@@ -17,9 +17,41 @@
 </head>
 
 <body>
-    <h1>It works!</h1>
-
-
+    <h1>Do It Now!</h1>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Add a task</legend>
+                <li>
+                    <label for="taskGroup" >Task Group</label>
+                    <select id="taskGroup">
+                        <option value="Personal">Personal</option>
+                        <option value="Family">Family</option>
+                        <option value="Work">Work</option>
+                        <option value="Volunteer">Volunteer</option>
+                    </select>
+                </li>
+            <h4>Type of Task:</h4>
+            
+                <ul>
+                    <li><input type="radio" checked value="Email" id="email" name="taskType" /><label for="email">Email</label></li>
+                    <li><input type="radio" value="Call" id="call" name="taskType" /><label for="call">Call</label></li>
+                    <li><input type="radio" value="Meet with" id="meet" name="taskType" /><label for="meet with">Meet with:</label></li>
+                    <li><input type="radio" value="Other" id="other" name="taskType" /><label for="other">Other</label></li>
+                </ul>
+            
+        </fieldset>
+        <fieldset>
+            <legend>New Task Details</legend>
+            <ul>
+                <li><label for="what">Who or What?  </label><input type="text" id="what" /></li>
+                <li><label for="detail">Email: / Phone #: / Location:  </label><input type="text" id="detail" /></li>
+                <li><label for="due">Due Date:  </label><input type="text" id="due" /></li>
+            </ul>
+            
+            
+            
+    </form>
+                        
 
 </body>
 </html>
