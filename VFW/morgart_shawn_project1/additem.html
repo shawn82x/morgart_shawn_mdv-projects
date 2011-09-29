@@ -43,12 +43,26 @@
         <fieldset>
             <legend>New Task Details</legend>
             <ul>
-                <li><label for="what">Who or What?  </label><input type="text" id="what" /></li>
-                <li><label for="detail">Email: / Phone #: / Location:  </label><input type="text" id="detail" /></li>
-                <li><label for="due">Due Date:  </label><input type="text" id="due" /></li>
+                <li><label for="what">Who or What? </label><input type="text" id="what" /></li>
+                <li><label for="email">Email: </label><input type="email" id="email" placeholder="example@email.com" /></li>
+                <li><label for="phone">Phone #: </label><input type="text" id="phone" placeholder="123-456-7890" /></li>
+                <li><label for="location">Location: </label><input type="text" id="location" placeholder="favorite coffeehouse" /></li>
             </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Completion</legend>
+                <ul>
+                    <li><label for="date">Due Date: </label><input type="date" id="due_date" /></li>
+                    <li><label for="importance">Importance: </label><input type="range" id="importance" min="1" max="10" /></li>
+                    <li><label for="notes">Additional Notes:</label><textarea id="notes"></textarea></li>
+                </ul>
+                <input type="submit" />
+        </fieldset>
             
-            
+        <fieldset>
+            <li><a href='#'>Display Saved Data</a></li>
+            <li><a href='#'>Clear Local Data</a></li>
+        </fieldset>
             
     </form>
                         
