@@ -5,33 +5,46 @@ author: Shawn R. Morgart
 for: Visual Frameworks 1110: Project 2
 
 */
+
+
 body {
-    background-color: #C4CF58
+    background-color: #1F3C66	
 
 }
 
 h1 {
     margin: 20px;
     border: 5px solid #910F0C;
-    padding: 5px;
+    padding-left: 20px;
     width: 480px;
-    font:
+    background-color: #C1CF3B
+    
 }
 
 legend {
     margin: 20px;
     border: 5px solid #910F0C;
-    padding: 5px;
+    padding: 8px;
     width: auto;
+    background-color: #C1CF3B;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 fieldset {
     margin: 20px;
     border: 5px solid #910F0C;
-    padding: 20px;
+    padding-left: 20px;
     width: 480px;
+    background-color: #C1CF3B
     
 }
+
+input {
+    margin: 5px;
+    background-color: #C4CF58;
+}
+
 
 
 
