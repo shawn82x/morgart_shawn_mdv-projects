@@ -1,0 +1,38 @@
+/*
+
+title: additem.html Styles
+author: Shawn R. Morgart
+for: Visual Frameworks 1110: Project 2
+
+*/
+body {
+    background-color: #C4CF58
+
+}
+
+h1 {
+    margin: 20px;
+    border: 5px solid #910F0C;
+    padding: 5px;
+    width: 480px;
+    font:
+}
+
+legend {
+    margin: 20px;
+    border: 5px solid #910F0C;
+    padding: 5px;
+    width: auto;
+}
+
+fieldset {
+    margin: 20px;
+    border: 5px solid #910F0C;
+    padding: 20px;
+    width: 480px;
+    
+}
+
+
+
+
