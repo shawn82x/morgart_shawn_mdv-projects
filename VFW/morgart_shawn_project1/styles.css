@@ -6,24 +6,52 @@ for: Visual Frameworks 1110: Project 2
 
 */
 
-
 body {
-    background-color: #1F3C66	
+    background-color: #000000;
+}
 
+form {
+    margin: 20px 180px 20px 20px;
+    border: double #910F0C;
+        -moz-border-radius: 5px 15px;
+        -webkit-border-radius: 5px 15px;
+        -moz-box-shadow: 5px 5px 5px #D25C59;
+        -webkit-box-shadow: 5px 5px 5px #D25C59;
+    background-color: #1F3C66;
 }
 
 h1 {
+    margin: 40px 20px 20px 20px;
+    border: 5px double #910F0C;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+    padding: 10px;
+    width: 480px;
+    background-color: #C1CF3B;
+    text-align: center;
+    
+}
+
+fieldset {
     margin: 20px;
-    border: 5px solid #910F0C;
+    border: 5px double #910F0C;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
     padding-left: 20px;
     width: 480px;
-    background-color: #C1CF3B
+    background-color: #C1CF3B;
     
+}
+
+li {
+    list-style-type: square;
 }
 
 legend {
     margin: 20px;
-    border: 5px solid #910F0C;
+    border: 5px double #910F0C;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
     padding: 8px;
     width: auto;
     background-color: #C1CF3B;
@@ -31,21 +59,16 @@ legend {
     font-weight: bold;
 }
 
-fieldset {
-    margin: 20px;
-    border: 5px solid #910F0C;
-    padding-left: 20px;
-    width: 480px;
-    background-color: #C1CF3B
-    
-}
-
 input {
     margin: 5px;
     background-color: #C4CF58;
 }
 
+a {
+    border: outset;
+}
 
+a:hover {color: red;}
 
 
 
