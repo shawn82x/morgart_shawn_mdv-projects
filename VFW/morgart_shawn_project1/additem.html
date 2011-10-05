@@ -33,12 +33,12 @@
                 </li>
             <h4>Type of Task:</h4>
             
-                <ul>
-                    <li><input type="radio" checked value="Email" id="email" name="taskType" /><label for="email">Email</label></li>
-                    <li><input type="radio" value="Call" id="call" name="taskType" /><label for="call">Call</label></li>
-                    <li><input type="radio" value="Meet with" id="meet" name="taskType" /><label for="meet with">Meet with:</label></li>
-                    <li><input type="radio" value="Other" id="other" name="taskType" /><label for="other">Other</label></li>
-                </ul>
+            <ul>
+                <li><input type="radio" checked value="Email" id="email" name="taskType" /><label for="Email">Email</label></li>
+                <li><input type="radio" value="Call" id="call" name="taskType" /><label for="Call">Call</label></li>
+                <li><input type="radio" value="Meeting" id="meeting" name="taskType" /><label for="Meting">Meeting:</label></li>
+                <li><input type="radio" value="Other" id="Other" name="taskType" /><label for="O3ther">Other</label></li>
+            </ul>
             
         </fieldset>
         <fieldset>
@@ -52,20 +52,23 @@
         </fieldset>
         <fieldset>
             <legend>Time It!</legend>
-                <ul>
-                    <li><label for="date">Due Date: </label><input type="date" id="due_date" /></li>
-                    <li><label for="importance">Importance: </label><input type="range" id="importance" min="1" max="10" /></li>
-                    <li><label for="notes">Additional Notes:</label><textarea id="notes"></textarea></li>
-                </ul>
+            <ul>
+                <li><label for="due_date">Due Date: </label><input type="date" id="due_date" /></li>
+                <li><label for="importance">Importance: </label><input type="range" id="importance" min="1" max="10" /></li>
+                <li><label for="notes">Additional Notes:</label><textarea id="notes"></textarea></li>
+            </ul>
         </fieldset>
         
          <input type="submit" />
-            
+        
         <fieldset>
-            <li><a href='#'>Display Saved Data</a></li>
-            <li><a href='#'>Clear Local Data</a></li>
+            <legend>Data:</legend>
+            <ul>
+                <li><a href='#'>Display Saved Data</a></li>
+                <li><a href='#'>Clear Local Data</a></li>
+            </ul>
         </fieldset>
-            
+        
     </form>
                         
 
