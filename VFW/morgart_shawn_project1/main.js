@@ -30,8 +30,23 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     function storeData() {
-        localStorage.setItem("test", "hello");    
-    };
+        var id              = Math.floor(Math.random()*1000000001);
+        // Gather form field values and store in an object.
+        // Object properties contain array with the form label an input value.
+        var item            = {};
+            item.group      = ["Group", $("groups").value];
+            item.what       = ["Who or What?", $("what").value];
+            item.phone      = ["Phone#:", $("phone").value];
+            item.location   = ["Location:", $("location").value];
+            item.duedate    = ["Due Date:", $("dueDate").value];
+            item.importance = ["Importance:", $("importance").value];
+            item.notes      = ["Additional Notes:", $("notes").value];
+/*            item.taskType   = ["Type of Task:", $("taskType")]                */
+
+
+        // Save data into Local Storage: Use Stringify to convert our object to a string.
+        localStorage.setItem(id, item)
+    }
     //Variable defaults
     var taskGroup = ["-- Choose A Group --", "Personal", "Family", "Work", "Volunteer"];
     chooseGroup();
