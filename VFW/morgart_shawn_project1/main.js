@@ -25,8 +25,12 @@ window.addEventListener("DOMContentLoaded", function(){
             makeOption.setAttribute("value", optText);
             makeOption.innerHTML = optText;
             makeSelect.appendChild(makeOption);
-        };
+        }
         selectLi.appendChild(makeSelect);
+    }
+    
+    function storeData() {
+        localStorage.setItem("test", "hello");    
     };
     //Variable defaults
     var taskGroup = ["-- Choose A Group --", "Personal", "Family", "Work", "Volunteer"];
@@ -34,11 +38,15 @@ window.addEventListener("DOMContentLoaded", function(){
         
         
     //Set Link & Submit Click Events
+    /*
     var displayLink = $("displayLink");
     displayLink.addEventListener("click", getData);
     var clearLink = $("clear");
     clearLink.addEventListener("click", clearLocal);
     var submit = $("submit");
     submit.addEventListener("click", storeData);
+    */
+    var save = $("submit");
+    save.addEventListener("click", storeData);
     
 });
