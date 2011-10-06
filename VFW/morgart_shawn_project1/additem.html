@@ -22,7 +22,8 @@
         
         <fieldset>
             <legend>Classify It!</legend>
-                <li>
+                <li id="select"><label for="group">*Add To Group:</label><br /></li>
+    <!--
                     <label for="taskGroup" >Task Group</label>
                     <select id="taskGroup">
                         <option value="Personal">Personal</option>
@@ -31,13 +32,14 @@
                         <option value="Volunteer">Volunteer</option>
                     </select>
                 </li>
+     -->
             <h4>Type of Task:</h4>
             
             <ul>
-                <li><input type="radio" checked value="Email" id="email" name="taskType" /><label for="Email">Email</label></li>
-                <li><input type="radio" value="Call" id="call" name="taskType" /><label for="Call">Call</label></li>
-                <li><input type="radio" value="Meeting" id="meeting" name="taskType" /><label for="Meting">Meeting:</label></li>
-                <li><input type="radio" value="Other" id="Other" name="taskType" /><label for="O3ther">Other</label></li>
+                <li><input type="radio" checked value="Email" id="email" name="taskType" /><label for="email">Email</label></li>
+                <li><input type="radio" value="Call" id="call" name="taskType" /><label for="call">Call</label></li>
+                <li><input type="radio" value="Meeting" id="meeting" name="taskType" /><label for="meeting">Meeting:</label></li>
+                <li><input type="radio" value="Other" id="other" name="taskType" /><label for="other">Other</label></li>
             </ul>
             
         </fieldset>
@@ -63,10 +65,8 @@
         
         <fieldset>
             <legend>Data:</legend>
-            <ul>
-                <li><a href='#'>Display Saved Data</a></li>
-                <li><a href='#'>Clear Local Data</a></li>
-            </ul>
+                <a href='displayLink'>Display Saved Data</a>
+                <a href='clearLink'>Clear Local Data</a>
         </fieldset>
         
     </form>

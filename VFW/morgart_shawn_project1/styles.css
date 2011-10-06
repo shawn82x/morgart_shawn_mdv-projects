@@ -60,13 +60,17 @@ legend {
 }
 
 input {
-    margin: 5px;
+    margin: 5px 5px 5px 25px;
     background-color: #C4CF58;
 }
 
 a {
-    font: bold;
-    border: double;
+    margin: 5px 5px 20px 20px;
+    border: 2px solid #910F0C;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+    padding: 5px;
+    background-color: #C1CF3B;
     
 }
 
