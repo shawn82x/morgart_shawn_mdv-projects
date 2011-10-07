@@ -17,10 +17,14 @@
 </head>
 
 <body>
-    <form action="#" method="post">
+    <form action="#" method="post" id="contactForm" />
         <h1>Do It Now!</h1>
-        
+        <a href='#' id="displayLink">Display Saved Data</a>
+        <a href='#' id="clearLink">Clear Local Data</a>
+        <a href='additem.html' id="addNew" style="display:none;">Add New Item</a>
+
         <fieldset>
+            
             <legend>Classify It!</legend>
                 <li id="select"><label for="group">*Add To Group:</label><br /></li>
     <!--
@@ -62,12 +66,6 @@
         </fieldset>
         
          <input type="submit" value="Save Contact" input="submit" id="submit" /><br />
-        
-        <fieldset>
-            <legend>Data:</legend>
-                <a href='displayLink' id="displayLink">Display Saved Data</a>
-                <a href='clearLink' id="clearLink">Clear Local Data</a>
-        </fieldset>
         
     </form>
                         

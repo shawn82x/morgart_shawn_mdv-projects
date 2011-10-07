@@ -38,7 +38,26 @@ window.addEventListener("DOMContentLoaded", function(){
         }
     }
     
-    
+   function toggleControls(n){
+        switch(n){
+            case "on":
+                $('contactForm').style.display = "none";
+                $('clearLink').style.display = "inline";
+                $('displayLink').style.display = "none";
+                $('addNew').style.display = "inline";
+                break;
+            case "off":
+                $('contactForm').style.display = "block";
+                $('clearLink').style.display = "inline";
+                $('displayLink').style.display = "inline";
+                $('addNew').style.display = "none";
+                $('items').style.display = "none";
+                break;
+            default:
+                return false;
+        }
+    }
+
     function storeData() {
         var id              = Math.floor(Math.random()*1000000001);
         // Gather form field values and store in an object.
@@ -62,12 +81,17 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     function getData(){
+        toggleControls("on");
+        if(localStorage.length === 0){
+            alert("There is no data in Local Storage.");
+        }
         //Write Data from Local Storage to the browser.
         var makeDiv = document.createElement("div");
         makeDiv.setAttribute("id", "items");
         var makeList = document.createElement("ul");
         makeDiv.appendChild(makeList);
         document.body.appendChild(makeDiv);
+        $('items').style.display = "block";
         for(var i=0, len=localStorage.length; i<len; i++){
             var makeli = document.createElement('li');
             makeList.appendChild(makeli);
@@ -86,6 +110,17 @@ window.addEventListener("DOMContentLoaded", function(){
         }
     }
     
+    function clearLocal(){
+        if(localStorage.length === 0){
+            alert("There is no data to clear.")
+        }else{
+            localStorage.clear();
+            alert("All contacts are deleted!");
+            window.location.reload();
+            return false;
+        }
+    }
+    
     //Variable defaults
     var taskGroup = ["-- Choose A Group --", "Personal", "Family", "Work", "Volunteer"],
         taskValue;
@@ -97,11 +132,11 @@ window.addEventListener("DOMContentLoaded", function(){
     
     var displayLink = $("displayLink");
     displayLink.addEventListener("click", getData);
-/*    var clearLink = $("clear");
+    var clearLink = $("clearLink");
     clearLink.addEventListener("click", clearLocal);
     var submit = $("submit");
     submit.addEventListener("click", storeData);
-*/
+    
     var save = $("submit");
     save.addEventListener("click", storeData);
     
