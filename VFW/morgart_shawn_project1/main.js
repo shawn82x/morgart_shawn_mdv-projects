@@ -67,6 +67,7 @@ window.addEventListener("DOMContentLoaded", function(){
         makeDiv.setAttribute("id", "items");
         var makeList = document.createElement("ul");
         makeDiv.appendChild(makeList);
+        document.body.appendChild(makeDiv);
         for(var i=0, len=localStorage.length; i<len; i++){
             var makeli = document.createElement('li');
             makeList.appendChild(makeli);
@@ -93,14 +94,14 @@ window.addEventListener("DOMContentLoaded", function(){
         
     //Set Link & Submit Click Events
 
-    /*
+    
     var displayLink = $("displayLink");
     displayLink.addEventListener("click", getData);
-    var clearLink = $("clear");
+/*    var clearLink = $("clear");
     clearLink.addEventListener("click", clearLocal);
     var submit = $("submit");
     submit.addEventListener("click", storeData);
-    */    
+*/
     var save = $("submit");
     save.addEventListener("click", storeData);
     
