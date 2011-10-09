@@ -103,7 +103,7 @@ window.addEventListener("DOMContentLoaded", function(){
             item.zip        = ["Zip:", $("zip").value];
             item.phone      = ["Phone:", $("phone").value];
             item.email      = ["Email:", $("email").value];
-            item.taskType   = ["Preferred Method of Contact:", taskValue];
+            item.taskType   = ["Preferred Method of Contact:", taskGroup];
             item.direction  = ["Direction: toward vs. away:", $("direction").value];
             item.source     = ["Source: internal vs. external:", $("source").value];
             item.reason     = ["Reason: options vs. procedures:", $("reason").value];
@@ -120,8 +120,10 @@ window.addEventListener("DOMContentLoaded", function(){
             item.inf        = ["Influencing:", $("inf").value];
             item.stead      = ["Steadiness:", $("stead").value];
             item.comp       = ["Compliance:", $("comp").value];
-
-
+            item.rep        = ["Representational Style:", repStyleValue];
+            item.chan       = ["Channel:", channelValue];
+            item.conv       = ["Convincer:", convincerValue];
+            item.soci       = ["Social Style:", socialstyleValue];
 
         // Save data into Local Storage: Use Stringify to convert our object to a string.
         localStorage.setItem(id, JSON.stringify(item));
@@ -147,11 +149,11 @@ window.addEventListener("DOMContentLoaded", function(){
             var value = localStorage.getItem(key);
             // Convert the string from local storage value back to an object by using JSON.parse().
             var obj = JSON.parse(value);
-            var makeSublist = document.createElement('ul');
-            makeli.appendChild(makeSublist);
+            var makeSubList = document.createElement('ul');
+            makeli.appendChild(makeSubList);
             for(var n in obj){
                 var makeSubli = document.createElement('li');
-                makeSublist.appendChild(makeSubli);
+                makeSubList.appendChild(makeSubli);
                 var optSubText = obj[n][0]+" "+obj[n][1];
                 makeSubli.innerHTML = optSubText;
             }
@@ -173,12 +175,8 @@ window.addEventListener("DOMContentLoaded", function(){
     var taskGroup = ["-- Choose --", "Email", "Phone-Home", "Phone-Mobile", "Phone-Office"],
         taskType;
 
-        repStyleValue,
-        channelValue,
-        convincerValue,
-        socialstyleValue,
-
     chooseGroup();
+    
         
         
     //Set Link & Submit Click Events
@@ -192,7 +190,7 @@ window.addEventListener("DOMContentLoaded", function(){
     
     var submit = $("submit");
     submit.addEventListener("click", storeData);
-    
+      
     var save = $("submit");
     save.addEventListener("click", storeData);
     
