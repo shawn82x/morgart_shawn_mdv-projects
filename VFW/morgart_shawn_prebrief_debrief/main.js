@@ -29,11 +29,38 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     //Find value of selected radio button.
-    function getSelectedRadio(){
-        var radios = document.forms[0].taskType;
+    function getRadioRepstyle(){
+        var radios = document.forms[0].repStyle;
         for (var i=0; i<radios.length; i++){
             if(radios[i].checked){
-                taskValue = radios[i].value;
+                repStyleValue = radios[i].value;
+            }
+        }
+    }
+    
+    function getRadioChannel(){
+        var radios = document.forms[0].channel;
+        for (var i=0; i<radios.length; i++){
+            if(radios[i].checked){
+                channelValue = radios[i].value;
+            }
+        }
+    }
+    
+    function getRadioConvincer(){
+        var radios = document.forms[0].convincer;
+        for (var i=0; i<radios.length; i++){
+            if(radios[i].checked){
+                convincerValue = radios[i].value;
+            }
+        }
+    }
+    
+    function getRadioSocialstyle(){
+        var radios = document.forms[0].socialstyle;
+        for (var i=0; i<radios.length; i++){
+            if(radios[i].checked){
+                socialstyleValue = radios[i].value;
             }
         }
     }
@@ -62,17 +89,38 @@ window.addEventListener("DOMContentLoaded", function(){
         var id              = Math.floor(Math.random()*1000000001);
         // Gather form field values and store in an object.
         // Object properties contain array with the form label an input value.
-        getSelectedRadio();
+        getRadioRepstyle();
+        getRadioChannel();
+        getRadioConvincer();
+        getRadioSocialstyle();
+        
         var item            = {};
-            item.group      = ["Group", $("groups").value];
-            item.what       = ["Who or What?", $("what").value];
+            item.fname      = ["First Name:", $("fname").value];
+            item.lname      = ["Last Name:", $("lname").value];
+            item.street     = ["Street:", $("street").value];
+            item.city       = ["City:", $("city").value];
+            item.state      = ["State:", $("state").value];
+            item.zip        = ["Zip:", $("zip").value];
+            item.phone      = ["Phone:", $("phone").value];
             item.email      = ["Email:", $("email").value];
-            item.phone      = ["Phone#:", $("phone").value];
-            item.location   = ["Location:", $("location").value];
-            item.duedate    = ["Due Date:", $("due_date").value];
-            item.importance = ["Importance:", $("importance").value];
-            item.notes      = ["Additional Notes:", $("notes").value];
-            item.taskType   = ["Type of Task:", taskValue];
+            item.taskType   = ["Preferred Method of Contact:", taskValue];
+            item.direction  = ["Direction: toward vs. away:", $("direction").value];
+            item.source     = ["Source: internal vs. external:", $("source").value];
+            item.reason     = ["Reason: options vs. procedures:", $("reason").value];
+            item.level      = ["Level: proactive vs. reactive:", $("level").value];
+            item.scope      = ["Scope big-picture vs. details:", $("scope").value];
+            item.change     = ["Change sameness vs. difference:", $("change").value];
+            item.theor      = ["Theoretical:", $("theor").value];
+            item.util       = ["Utilitarian:", $("util").value];
+            item.aesth      = ["Aesthetic:", $("aesth").value];
+            item.soci       = ["Social:", $("soci").value];
+            item.indiv      = ["Individualistic:", $("indiv").value];
+            item.trad       = ["Traditional:", $("trad").value];
+            item.dom        = ["Dominance:", $("dom").value];
+            item.inf        = ["Influencing:", $("inf").value];
+            item.stead      = ["Steadiness:", $("stead").value];
+            item.comp       = ["Compliance:", $("comp").value];
+
 
 
         // Save data into Local Storage: Use Stringify to convert our object to a string.
@@ -123,7 +171,13 @@ window.addEventListener("DOMContentLoaded", function(){
     
     //Variable defaults
     var taskGroup = ["-- Choose --", "Email", "Phone-Home", "Phone-Mobile", "Phone-Office"],
-        taskValue;
+        taskType;
+
+        repStyleValue,
+        channelValue,
+        convincerValue,
+        socialstyleValue,
+
     chooseGroup();
         
         
@@ -132,8 +186,10 @@ window.addEventListener("DOMContentLoaded", function(){
     
     var displayLink = $("displayLink");
     displayLink.addEventListener("click", getData);
+    
     var clearLink = $("clearLink");
     clearLink.addEventListener("click", clearLocal);
+    
     var submit = $("submit");
     submit.addEventListener("click", storeData);
     
