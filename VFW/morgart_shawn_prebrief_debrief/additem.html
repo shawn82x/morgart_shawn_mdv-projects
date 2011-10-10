@@ -19,13 +19,16 @@
 </head>
 
 <body>
-    <form action="#" method="post" id="contactForm" />
+    <div> 
         <h1>Sales College of Northwest Ohio</h1>
         <h2>Client Pre-Brief / De-Brief Form</h2>
+    </div>
     
         <a href='#' id="displayLink">Display Saved Data</a>
+        <a href='additem.html' id="addNew" style="display: none;">Add New Client</a>
         <a href='#' id="clearLink">Clear Local Data</a>
-        <a href='additem.html' id="addNew">Add New Client</a>
+    
+    <form action="#" method="post" id="contactForm" />
 
         <fieldset>
             <legend>Client Details</legend>
@@ -51,12 +54,14 @@
                 <li><input type="radio" value="kines" id="kines" name="repStyle" /><label for="kines">Kinesthetic: looks down and right. Talk = Slow. Uses words related to "feeling"</label></li>
             </ul>
             <h4>Meta-Programs</h4>
-            <li><label for="direction">Direction: toward vs. away: </label><input type="range" id="direction" min="-5" max="5" /></li>
-            <li><label for="source">Source: internal vs. external: </label><input type="range" id="source" min="-5" max="5" /></li>
-            <li><label for="reason">Reason: options vs. procedures: </label><input type="range" id="reason" min="-5" max="5" /></li>
-            <li><label for="level">Level: proactive vs. reactive: </label><input type="range" id="level" min="-5" max="5" /></li>
-            <li><label for="scope">Scope: big-picture vs. details: </label><input type="range" id="scope" min="-5" max="5" /></li>
-            <li><label for="change">Change: sameness vs. difference: </label><input type="range" id="change" min="-5" max="5" /></li>
+            <ul>
+                <li><label for="direction">Direction: toward vs. away: </label><input type="range" id="direction" min="-5" max="5" /></li>
+                <li><label for="source">Source: internal vs. external: </label><input type="range" id="source" min="-5" max="5" /></li>
+                <li><label for="reason">Reason: options vs. procedures: </label><input type="range" id="reason" min="-5" max="5" /></li>
+                <li><label for="level">Level: proactive vs. reactive: </label><input type="range" id="level" min="-5" max="5" /></li>
+                <li><label for="scope">Scope: big-picture vs. details: </label><input type="range" id="scope" min="-5" max="5" /></li>
+                <li><label for="change">Change: sameness vs. difference: </label><input type="range" id="change" min="-5" max="5" /></li>
+            </ul>
             <h4>Channel</h4>
             <ul>
                 <li><input type="radio" value="see" id="see" name="channel" /><label for="see">See: Must see examples.</label></li>
@@ -103,7 +108,6 @@
         </fieldset>
         
          <input type="submit" value="Save Client" input="submit" id="submit" /><br />
-        
     </form>
 
 </body>

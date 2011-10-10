@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function(){
    
     //Create select field element and populate with options
     function chooseGroup() {
-        var formTag = document.getElementsByTagName("form"),
+        var formTag = document.getElementsByTagName("div"),
             selectLi = $("select"),
             makeSelect = document.createElement("select");
             makeSelect.setAttribute("id", "groups");
@@ -104,27 +104,34 @@ window.addEventListener("DOMContentLoaded", function(){
             item.phone      = ["Phone:", $("phone").value];
             item.email      = ["Email:", $("email").value];
             item.taskType   = ["Preferred Method of Contact:", taskGroup];
+            item.lineBreak  = [" ", lineBreak];
+            item.rep        = ["Representational Style:", repStyleValue];
+            item.lineBreak2 = [" ", lineBreak];
             item.direction  = ["Direction: toward vs. away:", $("direction").value];
             item.source     = ["Source: internal vs. external:", $("source").value];
             item.reason     = ["Reason: options vs. procedures:", $("reason").value];
             item.level      = ["Level: proactive vs. reactive:", $("level").value];
             item.scope      = ["Scope big-picture vs. details:", $("scope").value];
             item.change     = ["Change sameness vs. difference:", $("change").value];
+            item.lineBreak3 = [" ", lineBreak];
+            item.chan       = ["Channel:", channelValue];
+            item.conv       = ["Convincer:", convincerValue];
+            item.lineBreak4 = [" ", lineBreak];
             item.theor      = ["Theoretical:", $("theor").value];
             item.util       = ["Utilitarian:", $("util").value];
             item.aesth      = ["Aesthetic:", $("aesth").value];
             item.soci       = ["Social:", $("soci").value];
             item.indiv      = ["Individualistic:", $("indiv").value];
             item.trad       = ["Traditional:", $("trad").value];
+            item.lineBreak5 = [" ", lineBreak];
+            item.social     = ["Social Style:", socialstyleValue];
+            item.lineBreak6 = [" ", lineBreak];
             item.dom        = ["Dominance:", $("dom").value];
             item.inf        = ["Influencing:", $("inf").value];
             item.stead      = ["Steadiness:", $("stead").value];
             item.comp       = ["Compliance:", $("comp").value];
-            item.rep        = ["Representational Style:", repStyleValue];
-            item.chan       = ["Channel:", channelValue];
-            item.conv       = ["Convincer:", convincerValue];
-            item.soci       = ["Social Style:", socialstyleValue];
-
+            item.lineBreak7 = [" ", lineBreak];
+            
         // Save data into Local Storage: Use Stringify to convert our object to a string.
         localStorage.setItem(id, JSON.stringify(item));
         alert("Contact Saved!");
@@ -174,7 +181,7 @@ window.addEventListener("DOMContentLoaded", function(){
     //Variable defaults
     var taskGroup = ["-- Choose --", "Email", "Phone-Home", "Phone-Mobile", "Phone-Office"],
         taskType;
-
+    var lineBreak = "----------------------------------------";
     chooseGroup();
     
         
