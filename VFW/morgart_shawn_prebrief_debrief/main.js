@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function(){
    
     //Create select field element and populate with options
     function chooseGroup() {
-        var formTag = document.getElementsByTagName("div"),
+        var formTag = document.getElementsByTagName("form"),
             selectLi = $("select"),
             makeSelect = document.createElement("select");
             makeSelect.setAttribute("id", "groups");
@@ -143,7 +143,7 @@ window.addEventListener("DOMContentLoaded", function(){
             alert("There is no data in Local Storage.");
         }
         //Write Data from Local Storage to the browser.
-        var makeDiv = document.createElement("div");
+        var makeDiv = document.createElement("form");
         makeDiv.setAttribute("id", "items");
         var makeList = document.createElement("ul");
         makeDiv.appendChild(makeList);
@@ -179,8 +179,8 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     //Variable defaults
-    var taskGroup = ["-- Choose --", "Email", "Phone-Home", "Phone-Mobile", "Phone-Office"],
-        taskType;
+    var taskGroup = ["-- Choose --", "Email", "Phone-Home", "Phone-Mobile", "Phone-Office"];
+     //   taskType;
     var lineBreak = "----------------------------------------";
     chooseGroup();
     
