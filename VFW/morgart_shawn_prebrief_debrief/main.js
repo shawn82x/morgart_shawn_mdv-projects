@@ -95,6 +95,7 @@ window.addEventListener("DOMContentLoaded", function(){
         getRadioSocialstyle();
         
         var item            = {};
+            item.groups     = ["Type of Account:", $("groups").value];
             item.fname      = ["First Name:", $("fname").value];
             item.lname      = ["Last Name:", $("lname").value];
             item.street     = ["Street:", $("street").value];
@@ -103,7 +104,6 @@ window.addEventListener("DOMContentLoaded", function(){
             item.zip        = ["Zip:", $("zip").value];
             item.phone      = ["Phone:", $("phone").value];
             item.email      = ["Email:", $("email").value];
-            item.taskType   = ["Preferred Method of Contact:", taskGroup];
             item.lineBreak  = [" ", lineBreak];
             item.rep        = ["Representational Style:", repStyleValue];
             item.lineBreak2 = [" ", lineBreak];
@@ -179,7 +179,7 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     //Variable defaults
-    var taskGroup = ["-- Choose --", "Email", "Phone-Home", "Phone-Mobile", "Phone-Office"];
+    var taskGroup = ["-- Choose --", "Residential", "Commercial", "Medical Alert", "Upgrade / Current Customer"];
      //   taskType;
     var lineBreak = "----------------------------------------";
     chooseGroup();
