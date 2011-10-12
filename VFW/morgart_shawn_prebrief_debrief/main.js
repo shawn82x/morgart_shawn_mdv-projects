@@ -1,4 +1,4 @@
-// Visual Frameworks 1110; Project 2
+// Visual Frameworks 1110; Project 3
 
 // Author: Shawn R. Morgart
 
@@ -151,6 +151,7 @@ window.addEventListener("DOMContentLoaded", function(){
         $('items').style.display = "block";
         for(var i=0, len=localStorage.length; i<len; i++){
             var makeli = document.createElement('li');
+            var linksLi = document.createElement("li");
             makeList.appendChild(makeli);
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
@@ -163,8 +164,35 @@ window.addEventListener("DOMContentLoaded", function(){
                 makeSubList.appendChild(makeSubli);
                 var optSubText = obj[n][0]+" "+obj[n][1];
                 makeSubli.innerHTML = optSubText;
+                makeSubList.appendChild(linksLi);
             }
+            makeItemLinks(localStorage.key(i), linksLi);     //Create edit and delete buttons/link for each item in local storage.
         }
+    }
+    
+    //Make Item Links... create the edit and delet links for each stored item.
+    function makeItemLinks(key){
+        //add edit single item link
+        var editLink = document.createElement("a");
+        editLink.href = "#";
+        editLink.key = key;
+        var editText = "Edit Client";
+ //       editLink.addEventListener("click", editItem);
+        editLink.innerHTML = editText;
+        linksLi.appendchild(editLink);
+        
+        //add line-break
+        var breakTag = document.createElement("br");
+        linksLi.appendChild(breakTag);
+        
+        //add delete item link
+        var deleteLink = document.createElement("a");
+        deleteLink.href = "#";
+        deleteLink.key = key;
+        var deleteText = "Delete Client";
+//        deleteLink.addEventListener("click", deleteItem);
+        deleteLink.innerHTML = deleteText;
+        linksLi.appendchild(deleteLink);
     }
     
     function clearLocal(){
