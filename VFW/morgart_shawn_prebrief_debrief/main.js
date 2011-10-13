@@ -85,8 +85,17 @@ window.addEventListener("DOMContentLoaded", function(){
         }
     }
 
-    function storeData() {
-        var id              = Math.floor(Math.random()*1000000001);
+    function storeData(key) {
+        // If there is no key, this means this is a brand new item and we need a  new key.
+        if (!key){
+            var id          = Math.floor(Math.random()*1000000001);
+        }else{
+            //Set the id to the existing key we're editing so that it will save over the data.
+            //This is the same key passed from the editSubmit event handler...
+            //to the validate function, then passed here, into the storeData function.
+            id = key;
+        }
+
         // Gather form field values and store in an object.
         // Object properties contain array with the form label an input value.
         getRadioRepstyle();
@@ -144,9 +153,9 @@ window.addEventListener("DOMContentLoaded", function(){
             alert("There is no data in Local Storage.");
         }
         //Write Data from Local Storage to the browser.
-        var makeDiv = document.createElement("div");
+        var makeDiv = document.createElement('form');
         makeDiv.setAttribute("id", "items");
-        var makeList = document.createElement("ul");
+        var makeList = document.createElement('ul');
         makeDiv.appendChild(makeList);
         document.body.appendChild(makeDiv);
         $('items').style.display = "block";
@@ -157,7 +166,7 @@ window.addEventListener("DOMContentLoaded", function(){
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
             // Convert the string from local storage value back to an object by using JSON.parse().
-            var obj = JSON.parse(value);
+            var item = JSON.parse(value);
             var makeSubList = document.createElement('ul');
             makeli.appendChild(makeSubList);
             for(var n in obj){
@@ -402,8 +411,9 @@ window.addEventListener("DOMContentLoaded", function(){
             e.preventDefault();
             return false;
         }else{
-            //If all is OK, save our data!
-            storeData();
+            //If all is OK, save our data! Send the key value (that came from the edit function)
+            //Remember this key value was passed through the editSubmit eventListener...
+            storeData(this.key);
         }
     }
     
