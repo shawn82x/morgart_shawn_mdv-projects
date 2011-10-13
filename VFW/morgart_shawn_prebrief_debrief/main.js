@@ -131,6 +131,7 @@ window.addEventListener("DOMContentLoaded", function(){
             item.stead      = ["Steadiness:", $("stead").value];
             item.comp       = ["Compliance:", $("comp").value];
             item.lineBreak7 = [" ", lineBreak];
+            item.notes      = ["Notes:", $("notes").value];
             
         // Save data into Local Storage: Use Stringify to convert our object to a string.
         localStorage.setItem(id, JSON.stringify(item));
@@ -143,7 +144,7 @@ window.addEventListener("DOMContentLoaded", function(){
             alert("There is no data in Local Storage.");
         }
         //Write Data from Local Storage to the browser.
-        var makeDiv = document.createElement("form");
+        var makeDiv = document.createElement("div");
         makeDiv.setAttribute("id", "items");
         var makeList = document.createElement("ul");
         makeDiv.appendChild(makeList);
@@ -169,30 +170,142 @@ window.addEventListener("DOMContentLoaded", function(){
             makeItemLinks(localStorage.key(i), linksLi);     //Create edit and delete buttons/link for each item in local storage.
         }
     }
-    
+        
     //Make Item Links... create the edit and delet links for each stored item.
-    function makeItemLinks(key){
+    function makeItemLinks(key, linksLi){
         //add edit single item link
-        var editLink = document.createElement("a");
+        var editLink = document.createElement('a');
         editLink.href = "#";
         editLink.key = key;
         var editText = "Edit Client";
- //       editLink.addEventListener("click", editItem);
+        editLink.addEventListener("click", editItem);
         editLink.innerHTML = editText;
-        linksLi.appendchild(editLink);
+        linksLi.appendChild(editLink);
         
         //add line-break
         var breakTag = document.createElement("br");
         linksLi.appendChild(breakTag);
-        
+        var breakTag2 = document.createElement("br");
+        linksLi.appendChild(breakTag2);
+        var breakTag3 = document.createElement("br");
+        linksLi.appendChild(breakTag3);
+       
         //add delete item link
-        var deleteLink = document.createElement("a");
+        var deleteLink = document.createElement('a');
         deleteLink.href = "#";
         deleteLink.key = key;
         var deleteText = "Delete Client";
 //        deleteLink.addEventListener("click", deleteItem);
         deleteLink.innerHTML = deleteText;
-        linksLi.appendchild(deleteLink);
+        linksLi.appendChild(deleteLink);
+    }
+    
+    function editItem(){
+        //Grab the data from our item from Local Storage.
+        var value = localStorage.getItem(this.key);
+        var item = JSON.parse(value);
+        
+        // Show the form
+        toggleControls("off");
+        
+        //populate the form fields with current localStorage values.
+        $("groups").value       = item.groups[1];
+        $("fname").value        = item.fname[1];
+        $("lname").value        = item.lname[1];
+        $("street").value       = item.street[1];
+        $("city").value         = item.city[1];
+        $("state").value        = item.state[1];
+        $("zip").value          = item.zip[1];
+        $("phone").value        = item.phone[1];
+        $("email").value        = item.email[1];
+        $("lineBreak").value    = item.lineBreak[1];
+//      Radio buttons regarding "Representational Style"
+        var radios = document.forms[0].repStyle;
+        for(var i=0; i<radios.length; i++){
+            if(radios[i].value == "auditory" && item.rep[1] == "auditory"){
+                radios[i].setAttribute("checked", "checked");
+            }else if(radios[i].value == "visual" && item.rep[1] == "visual"){
+                radios[i].setAttribute("checked", "checked");
+            }else if(radios[i].value == "kines" && item.rep[i] == "kines"){
+                radios[i].setAttribute("checked", "checked");
+            }
+        }
+        
+//        $("lineBreak2").value   = item.lineBreak2[1];
+        $("direction").value    = item.direction[1];
+        $("source").value       = item.source[1];
+        $("reason").value       = item.reason[1];
+        $("level").value        = item.level[1];
+        $("scope").value        = item.scope[1];
+        $("change").value       = item.change[1];
+//        $("lineBreak3").value   = item.lineBreak3[1];
+//      Radio buttons regarding "Channel"
+        var radios = document.forms[0].channel;
+        for(var i=0; i<radios.length; i++){
+            if(radios[i].value == "see" && item.channel[1] == "see"){
+                radios[i].setAttribute("checked", "checked");
+            }else if(radios[i].value == "hear" && item.channel[1] == "hear"){
+                radios[i].setAttribute("checked", "checked");
+            }else if(radios[i].value == "read" && item.channel[i] == "read"){
+                radios[i].setAttribute("checked", "checked");
+            }else if(radios[i].value == "do" && item.channel[i] == "do"){
+                radios[i].setAttribute("checked", "checked");
+            }
+        }
+        
+//      Radio buttons regarding "Convincers"
+        var radios = document.forms[0].convincer;
+        for(var i=0; i<radios.length; i++){
+            if(radios[i].value == "overtime" && item.convincer[1] == "overtime"){
+                radios[i].setAttribute("checked", "checked");
+            }else if(radios[i].value == "repetition" && item.convincer[1] == "repetition"){
+                radios[i].setAttribute("checked", "checked");
+            }else if(radios[i].value == "automatic" && item.convincer[i] == "automatic"){
+                radios[i].setAttribute("checked", "checked");
+            }else if(radios[i].value == "consistent" && item.convincer[i] == "consistent"){
+                    radios[i].setAttribute("checked", "checked");
+            }
+        }
+        
+//        $("lineBreak4").value   = item.lineBreak4[1];
+        $("theor").value        = item.theor[1];
+        $("util").value         = item.util[1];
+        $("aesth").value        = item.aesth[1];
+        $("soci").value         = item.soci[1];
+        $("indiv").value        = item.indiv[1];
+        $("trad").value         = item.trad[1];
+//        $("lineBreak5").value   = item.lineBreak5[1];
+//      Radio buttons regarding "Social Style"
+        var radios = document.forms[0].socialstyle;
+        for(var i=0; i<radios.length; i++){
+            if(radios[i].value == "driver" && item.socialstyle[1] == "driver"){
+                radios[i].setAttribute("checked", "checked");
+            }else if(radios[i].value == "expressive" && item.socialstyle[1] == "expressive"){
+                radios[i].setAttribute("checked", "checked");
+            }else if(radios[i].value == "amiable" && item.socialstyle[i] == "amiable"){
+                radios[i].setAttribute("checked", "checked");
+            }else if(radios[i].value == "analytical" && item.socialstyle[i] == "analytical"){
+                radios[i].setAttribute("checked", "checked");
+            }
+        }
+
+//        $("lineBreak6").value   = item.lineBreak6[1];
+        $("dom").value          = item.dom[1];
+        $("inf").value          = item.inf[1];
+        $("stead").value        = item.stead[1];
+        $("comp").value         = item.comp[1];
+        $("lineBreak7").value   = item.lineBreak7[1];
+        $("notes").value        = item.notes[1];
+        
+        // Remove the initial listener from the input "save contact" button.
+        save.removeEventListener("click", storeData);
+        //Change Submit Button Value to Edit Button
+        $('submit').value = "Edit Client";
+        var editSubmit = $('submit');
+        //Save the key value established in this function as a property of the editSubmit event
+        //so we can use that value when we save the data we edited.
+        editSubmit.addEventListener("click", validate);
+        editSubmit.key = this.key;
     }
     
     function clearLocal(){
@@ -206,12 +319,101 @@ window.addEventListener("DOMContentLoaded", function(){
         }
     }
     
+    function validate(e){
+        //Define the elements I want to check
+        var getGroup    = $('groups');
+        var getFname    = $('fname');
+        var getLname    = $('lname');
+        var getStreet   = $('street');
+        var getCity     = $('city');
+        var getPhone    = $('phone');
+        var getEmail    = $('email');
+        
+        //reset error messages.
+        errMsg.innerHTML = "";
+            getGroup.style.border   = "1px solid black";
+            getGroup.style.border   = "1px solid black";
+            getLname.style.border   = "1px solid black";
+            getStreet.style.border  = "1px solid black";
+            getCity.style.border    = "1px solid black";
+            getPhone.style.border   = "1px solid black";
+            getEmail.style.border   = "1px solid black";
+
+        
+        //Get Error messages
+        var messageAry = [];
+        // Group validation
+        if(getGroup.value ==="-- Choose --"){
+            var groupError = "Please choose an Account Type!";
+            getGroup.style.border = "1px solid red";
+            messageAry.push(groupError);
+        }
+        
+        // First Name validation
+        if(getFname.value === ""){
+            var fNameError = "Please enter a first name!";
+            getGroup.style.border = "1px solid red";
+            messageAry.push(fNameError);
+        }
+        
+        // Last name validation
+        if(getLname.value === ""){
+            var lNameError = "Please enter a Last name!";
+            getLname.style.border = "1px solid red";
+            messageAry.push(lNameError);
+        }
+        
+        // Street validation
+        if(getStreet.value === ""){
+            var streetError = "Please enter a Street!";
+            getStreet.style.border = "1px solid red";
+            messageAry.push(streetError);
+        }
+        
+        // City validation
+        if(getCity.value === ""){
+            var cityError = "Please enter a City!";
+            getCity.style.border = "1px solid red";
+            messageAry.push(cityError);
+        }
+        
+        // Phone validation
+        if(getPhone.value === ""){
+            var phoneError = "Please enter a Phone number!";
+            getPhone.style.border = "1px solid red";
+            messageAry.push(phoneError);
+        }
+        
+        // Email validation
+        var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(!(re.exec(getEmail.value))){
+            var emailError = "Please enter a valid email address!";
+            getEmail.style.border = "1px solid red";
+            messageAry.push(emailError);
+        }
+        
+        //If there were errors, display them on the screen.
+        if(messageAry.length >= 1){
+            for(var i=0, j=messageAry.length; i<j; i++){
+                var txt = document.createElement('li');
+                txt.innerHTML = messageAry[i];
+                errMsg.appendChild(txt);
+            }
+            e.preventDefault();
+            return false;
+        }else{
+            //If all is OK, save our data!
+            storeData();
+        }
+    }
+    
+    
     //Variable defaults
     var taskGroup = ["-- Choose --", "Residential", "Commercial", "Medical Alert", "Upgrade / Current Customer"];
      //   taskType;
     var lineBreak = "----------------------------------------";
     chooseGroup();
-    
+    errMsg = $('errors');
         
         
     //Set Link & Submit Click Events
