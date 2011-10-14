@@ -24,11 +24,11 @@
         <h2>Client Pre-Brief / De-Brief Form</h2>
     </div>
     
-    <form action="#" method="post" id="contactForm">
         <a href='#' id="displayLink">Display Saved Data</a>
         <a href='additem.html' id="addNew" style="display: none;">Add New Client</a>
         <a href='#' id="clearLink">Clear Local Data</a>
-
+        
+    <form action="#" method="post" id="contactForm">
         <fieldset>
             <legend>Client Details</legend>
             <span>* fields are required.</span>
@@ -39,8 +39,8 @@
                 <li><label for="lname">*Last Name: </label><input type="text" id="lname" placeholder="Smith" /></li>
                 <li><label for="street">*Street: </label><input type="text" id="street" placeholder="123 Main St." /></li>
                 <li><label for="city">*City: </label><input type="text" id="city" placeholder="Findlay" /></li>
-                <li><label for="state">*State: </label><input type="text" id="state" placeholder="Ohio" /></li>
-                <li><label for="zip">*Zip: </label><input type="text" id="zip" placeholder="45840" /></li>
+                <li><label for="state">State: </label><input type="text" id="state" placeholder="Ohio" /></li>
+                <li><label for="zip">Zip: </label><input type="text" id="zip" placeholder="45840" /></li>
                 <li><label for="phone">*Phone: </label><input type="tel" id="phone" placeholder="123-456-7890" /></li>
                 <li><label for="email">*Email: </label><input type="email" id="email" placeholder="js@email.com" /></li>
             </ul>
@@ -105,9 +105,6 @@
                 <li><label for="inf">Influencing: reserved vs. outgoing. </label><input type="range" id="inf" min="-5" max="5" /></li>
                 <li><label for="stead">Steadiness: unstructured vs. structured. </label><input type="range" id="stead" min="-5" max="5" /></li>
                 <li><label for="comp">Compliance: makes own rules vs. follows The rules.</label><input type="range" id="comp" min="-5" max="5" /></li>
-            </ul>
-            <ul>
-                <li><label for="notes">Additional Notes:</label><textarea id="notes"></textarea></li>
             </ul>
         </fieldset>
         
