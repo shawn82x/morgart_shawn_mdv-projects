@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- Shawn R. Morgart, VFW-1110, Project 2 -->
+<!-- Shawn R. Morgart, VFW-1110, Project 3-->
 
 <html>
 <head>
@@ -35,33 +35,48 @@
             <ul id="errors"></ul>
             <ul>
                 <li id="select"><label for="group">*Type of Account:</label><br /></li>
-                <li><label for="fname">*First Name: </label><input type="text" id="fname" placeholder="John" /></li>
-                <li><label for="lname">*Last Name: </label><input type="text" id="lname" placeholder="Smith" /></li>
-                <li><label for="street">*Street: </label><input type="text" id="street" placeholder="123 Main St." /></li>
-                <li><label for="city">*City: </label><input type="text" id="city" placeholder="Findlay" /></li>
-                <li><label for="state">State: </label><input type="text" id="state" placeholder="Ohio" /></li>
-                <li><label for="zip">Zip: </label><input type="text" id="zip" placeholder="45840" /></li>
-                <li><label for="phone">*Phone: </label><input type="tel" id="phone" placeholder="123-456-7890" /></li>
-                <li><label for="email">*Email: </label><input type="email" id="email" placeholder="js@email.com" /></li>
+                <li><label for="fname">*First Name: </label></li>
+                <li><input type="text" id="fname" placeholder="John" /></li>
+                <li><label for="lname">*Last Name: </label></li>
+                <li><input type="text" id="lname" placeholder="Smith" /></li>
+                <li><label for="street">*Street: </label></li>
+                <li><input type="text" id="street" placeholder="123 Main St." /></li>
+                <li><label for="city">*City: </label></li>
+                <li><input type="text" id="city" placeholder="Anytown" /></li>
+                <li><label for="state">State: </label></li>
+                <li><input type="text" id="state" placeholder="YourState" /></li>
+                <li><label for="zip">Zip: </label></li>
+                <li><input type="text" id="zip" placeholder="12345" /></li>
+                <li><label for="phone">*Phone: </label></li>
+                <li><input type="tel" id="phone" placeholder="123-456-7890" /></li>
+                <li><label for="email">*Email: </label></li>
+                <li><input type="email" id="email" placeholder="email@email.com" /></li>
             </ul>
         </fieldset>
         <fieldset>
             <legend>Neurolinguistics</legend>
             <h4>Representational Style</h4>
-            <h5>Ask a Thought-Provoking Question:</h5>
+            <span>Ask a Thought-Provoking Question...</span>
             <ul>
-                <li><input type="radio" value="auditory" id="auditory" name="repStyle" /><label for="auditory">Auditory: looks side to side. Talk = Medium. Uses words related to "hearing".</label></li>
-                <li><input type="radio" value="visual" id="visual" name="repStyle" /><label for="visual">Visual: looks defocused or up-left or up-right. Talk = Fast. Uses words related to "seeing".</label></li>
-                <li><input type="radio" value="kines" id="kines" name="repStyle" /><label for="kines">Kinesthetic: looks down and right. Talk = Slow. Uses words related to "feeling"</label></li>
+                <li><input type="radio" value="auditory" id="auditory" name="repStyle" /><label for="auditory">Auditory: looks side to side. Talk = Medium.</label></li>
+                <li><input type="radio" value="visual" id="visual" name="repStyle" /><label for="visual">Visual: looks defocused or up-left or up-right. Talk = Fast.</label></li>
+                <li><input type="radio" value="kines" id="kines" name="repStyle" /><label for="kines">Kinesthetic: looks down and right. Talk = Slow. "Feeling" words.</label></li>
             </ul>
             <h4>Meta-Programs</h4>
+            <span>(Rank -5 to 5)</span>
             <ul>
-                <li><label for="direction">Direction: toward vs. away: </label><input type="range" id="direction" min="-5" max="5" /></li>
-                <li><label for="source">Source: internal vs. external: </label><input type="range" id="source" min="-5" max="5" /></li>
-                <li><label for="reason">Reason: options vs. procedures: </label><input type="range" id="reason" min="-5" max="5" /></li>
-                <li><label for="level">Level: proactive vs. reactive: </label><input type="range" id="level" min="-5" max="5" /></li>
-                <li><label for="scope">Scope: big-picture vs. details: </label><input type="range" id="scope" min="-5" max="5" /></li>
-                <li><label for="change">Change: sameness vs. difference: </label><input type="range" id="change" min="-5" max="5" /></li>
+                <li><label for="direction">Direction: toward vs. away: </label></li>
+                <li><input type="range" id="direction" min="-5" max="5" /></li>
+                <li><label for="source">Source: internal vs. external: </label></li>
+                <li><input type="range" id="source" min="-5" max="5" /></li>
+                <li><label for="reason">Reason: options vs. procedures: </label></li>
+                <li><input type="range" id="reason" min="-5" max="5" /></li>
+                <li><label for="level">Level: proactive vs. reactive: </label></li>
+                <li><input type="range" id="level" min="-5" max="5" /></li>
+                <li><label for="scope">Scope: big-picture vs. details: </label></li>
+                <li><input type="range" id="scope" min="-5" max="5" /></li>
+                <li><label for="change">Change: sameness vs. difference: </label></li>
+                <li><input type="range" id="change" min="-5" max="5" /></li>
             </ul>
             <h4>Channel</h4>
             <ul>
@@ -72,21 +87,28 @@
             </ul>
             <h4>Convincer</h4>
             <ul>
-                <li><input type="radio" value="overtime" id="overtime" name="convincer" /><label for="overtime">Period of Time: data must remain Consistant for a period of time.</label></li>
+                <li><input type="radio" value="overtime" id="overtime" name="convincer" /><label for="overtime">Period of Time: data must remain Consistant.</label></li>
                 <li><input type="radio" value="repetition" id="repetition" name="convincer" /><label for="repetition">Repetition: must have data a particular number of times.</label></li>
-                <li><input type="radio" value="automatic" id="automatic" name="convincer" /><label for="automatic">Automatic: need partial information, imagine the rest and decide.</label></li>
-                <li><input type="radio" value="consistent" id="consistent" name="convincer" /><label for="consistent">Consistent: never really convinced, have to get info Every time.</label></li>
+                <li><input type="radio" value="automatic" id="automatic" name="convincer" /><label for="automatic">Automatic: need partial information, assume the rest to decide.</label></li>
+                <li><input type="radio" value="consistent" id="consistent" name="convincer" /><label for="consistent">Consistent: never really convinced, get info Every time.</label></li>
             </ul>
         </fieldset>
         <fieldset>
             <legend>Values</legend>
+            <span>(Rank 0 to 10)</span>
             <ul>
-                <li><label for="theor">Theoretical: knowledge, problem solver.</label><input type="range" id="theor" min="0" max="10" /></li>
-                <li><label for="util">Utilitarian: practicality, money.</label><input type="range" id="util" min="0" max="10" /></li>
-                <li><label for="aesth">Aesthetic: creativity, enjoyment.</label><input type="range" id="aesth" min="0" max="10" /></li>
-                <li><label for="soci">Social: selflessness, generosity.</label><input type="range" id="soci" min="0" max="10" /></li>
-                <li><label for="indiv">Individualistic: leading, achieving.</label><input type="range" id="indiv" min="0" max="10" /></li>
-                <li><label for="trad">Traditional: by the "book".</label><input type="range" id="trad" min="0" max="10" /></li>
+                <li><label for="theor">Theoretical: knowledge, problem solver.</label></li>
+                <li><input type="range" id="theor" min="0" max="10" /></li>
+                <li><label for="util">Utilitarian: practicality, money.</label></li>
+                <li><input type="range" id="util" min="0" max="10" /></li>
+                <li><label for="aesth">Aesthetic: creativity, enjoyment.</label></li>
+                <li><input type="range" id="aesth" min="0" max="10" /></li>
+                <li><label for="soci">Social: selflessness, generosity.</label></li>
+                <li><input type="range" id="soci" min="0" max="10" /></li>
+                <li><label for="indiv">Individualistic: leading, achieving.</label></li>
+                <li><input type="range" id="indiv" min="0" max="10" /></li>
+                <li><label for="trad">Traditional: by the "book".</label></li>
+                <li><input type="range" id="trad" min="0" max="10" /></li>
             <ul>
         </fieldset>
         <fieldset>
@@ -100,11 +122,16 @@
             </ul>            
             
             <h4>DISC</h4>
+            <span>(Rank -5 to 5)</span>
             <ul>
-                <li><label for="dom">Dominance: calculating vs. agressive. </label><input type="range" id="dom" min="-5" max="5" /></li>
-                <li><label for="inf">Influencing: reserved vs. outgoing. </label><input type="range" id="inf" min="-5" max="5" /></li>
-                <li><label for="stead">Steadiness: unstructured vs. structured. </label><input type="range" id="stead" min="-5" max="5" /></li>
-                <li><label for="comp">Compliance: makes own rules vs. follows The rules.</label><input type="range" id="comp" min="-5" max="5" /></li>
+                <li><label for="dom">Dominance: calculating vs. agressive. </label></li>
+                <li><input type="range" id="dom" min="-5" max="5" /></li>
+                <li><label for="inf">Influencing: reserved vs. outgoing. </label></li>
+                <li><input type="range" id="inf" min="-5" max="5" /></li>
+                <li><label for="stead">Steadiness: unstructured vs. structured. </label></li>
+                <li><input type="range" id="stead" min="-5" max="5" /></li>
+                <li><label for="comp">Compliance: makes own rules vs. follows The rules.</label></li>
+                <li><input type="range" id="comp" min="-5" max="5" /></li>
             </ul>
         </fieldset>
         
