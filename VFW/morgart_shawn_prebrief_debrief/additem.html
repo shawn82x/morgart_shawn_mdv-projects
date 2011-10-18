@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- Shawn R. Morgart, VFW-1110, Project 3-->
+<!-- Shawn R. Morgart, VFW-1110, Project 4-->
 
 <html>
 <head>
@@ -15,6 +15,13 @@
     <title>Sales College of Northwest Ohio</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
     <script src="main.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        function showValue(num){
+        var result = document.getElementById('result');     
+        result.innerHTML = num;
+        }
+    </script>
     
 </head>
 
@@ -63,20 +70,20 @@
                 <li><input type="radio" value="kines" id="kines" name="repStyle" /><label for="kines">Kinesthetic: looks down and right. Talk = Slow. "Feeling" words.</label></li>
             </ul>
             <h4>Meta-Programs</h4>
-            <span>(Rank -5 to 5)</span>
+            <span>(Rank -10 to 10)</span>
             <ul>
                 <li><label for="direction">Direction: toward vs. away: </label></li>
-                <li><input type="range" id="direction" min="-5" max="5" /></li>
+                <li><input type="range" id="direction" min="-10" max="10" onChange="showValue(this.value);"/><span id="result" ></span></li>
                 <li><label for="source">Source: internal vs. external: </label></li>
-                <li><input type="range" id="source" min="-5" max="5" /></li>
+                <li><input type="range" id="source" min="-10" max="10" /></li>
                 <li><label for="reason">Reason: options vs. procedures: </label></li>
-                <li><input type="range" id="reason" min="-5" max="5" /></li>
+                <li><input type="range" id="reason" min="-10" max="10" /></li>
                 <li><label for="level">Level: proactive vs. reactive: </label></li>
-                <li><input type="range" id="level" min="-5" max="5" /></li>
+                <li><input type="range" id="level" min="-10" max="10" /></li>
                 <li><label for="scope">Scope: big-picture vs. details: </label></li>
-                <li><input type="range" id="scope" min="-5" max="5" /></li>
+                <li><input type="range" id="scope" min="-10" max="10" /></li>
                 <li><label for="change">Change: sameness vs. difference: </label></li>
-                <li><input type="range" id="change" min="-5" max="5" /></li>
+                <li><input type="range" id="change" min="-10" max="10" /></li>
             </ul>
             <h4>Channel</h4>
             <ul>
@@ -95,20 +102,20 @@
         </fieldset>
         <fieldset>
             <legend>Values</legend>
-            <span>(Rank 0 to 10)</span>
+            <span>(Rank 0 to 100)</span>
             <ul>
                 <li><label for="theor">Theoretical: knowledge, problem solver.</label></li>
-                <li><input type="range" id="theor" min="0" max="10" /></li>
+                <li><input type="range" id="theor" min="0" max="100" value="0" step="5" /></li>
                 <li><label for="util">Utilitarian: practicality, money.</label></li>
-                <li><input type="range" id="util" min="0" max="10" /></li>
+                <li><input type="range" id="util" min="0" max="100" value="0" step="5" /></li>
                 <li><label for="aesth">Aesthetic: creativity, enjoyment.</label></li>
-                <li><input type="range" id="aesth" min="0" max="10" /></li>
+                <li><input type="range" id="aesth" min="0" max="100" value="0" step="5" /></li>
                 <li><label for="soci">Social: selflessness, generosity.</label></li>
-                <li><input type="range" id="soci" min="0" max="10" /></li>
+                <li><input type="range" id="soci" min="0" max="100" value="0" step="5" /></li>
                 <li><label for="indiv">Individualistic: leading, achieving.</label></li>
-                <li><input type="range" id="indiv" min="0" max="10" /></li>
+                <li><input type="range" id="indiv" min="0" max="100" value="0" step="5" /></li>
                 <li><label for="trad">Traditional: by the "book".</label></li>
-                <li><input type="range" id="trad" min="0" max="10" /></li>
+                <li><input type="range" id="trad" min="0" max="100" value="0" step="5" /></li>
             <ul>
         </fieldset>
         <fieldset>
@@ -122,16 +129,16 @@
             </ul>            
             
             <h4>DISC</h4>
-            <span>(Rank -5 to 5)</span>
+            <span>(Rank -10 to 10)</span>
             <ul>
                 <li><label for="dom">Dominance: calculating vs. agressive. </label></li>
-                <li><input type="range" id="dom" min="-5" max="5" /></li>
+                <li><input type="range" id="dom" min="-10" max="10" /></li>
                 <li><label for="inf">Influencing: reserved vs. outgoing. </label></li>
-                <li><input type="range" id="inf" min="-5" max="5" /></li>
+                <li><input type="range" id="inf" min="-10" max="10" /></li>
                 <li><label for="stead">Steadiness: unstructured vs. structured. </label></li>
-                <li><input type="range" id="stead" min="-5" max="5" /></li>
+                <li><input type="range" id="stead" min="-10" max="10" /></li>
                 <li><label for="comp">Compliance: makes own rules vs. follows The rules.</label></li>
-                <li><input type="range" id="comp" min="-5" max="5" /></li>
+                <li><input type="range" id="comp" min="-10" max="10" /></li>
             </ul>
         </fieldset>
         

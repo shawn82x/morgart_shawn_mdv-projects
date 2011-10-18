@@ -55,7 +55,7 @@ h2 {
 }
 
 h4 {
-    color: #09116D;
+    color: #001C5E;
 }
 
 fieldset {
@@ -132,9 +132,12 @@ div {
 }
 
 span {
-    text-align: right;
-    color: yellow;
+    color: #5F0D00;
+    margin: 0px 0px 25px 10px;
+    border: inset #FAFAFF;
+    background-color: #FAFAFF;
 }
+
 
 
 

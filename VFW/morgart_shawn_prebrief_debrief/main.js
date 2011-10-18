@@ -4,7 +4,9 @@
 
 //Wait until the DOM is ready.
 window.addEventListener("DOMContentLoaded", function(){
-    
+   
+   
+   
 
     //getElementById Function
     function $(x){
@@ -39,28 +41,28 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     function getRadioChannel(){
-        var radios = document.forms[0].channel;
-        for (var i=0; i<radios.length; i++){
-            if(radios[i].checked){
-                channelValue = radios[i].value;
+        var radios2 = document.forms[0].channel;
+        for (var i=0; i<radios2.length; i++){
+            if(radios2[i].checked){
+                channelValue = radios2[i].value;
             }
         }
     }
     
     function getRadioConvincer(){
-        var radios = document.forms[0].convincer;
-        for (var i=0; i<radios.length; i++){
-            if(radios[i].checked){
-                convincerValue = radios[i].value;
+        var radios3 = document.forms[0].convincer;
+        for (var i=0; i<radios3.length; i++){
+            if(radios3[i].checked){
+                convincerValue = radios3[i].value;
             }
         }
     }
     
     function getRadioSocialstyle(){
-        var radios = document.forms[0].socialstyle;
-        for (var i=0; i<radios.length; i++){
-            if(radios[i].checked){
-                socialstyleValue = radios[i].value;
+        var radios4 = document.forms[0].socialstyle;
+        for (var i=0; i<radios4.length; i++){
+            if(radios4[i].checked){
+                socialstyleValue = radios4[i].value;
             }
         }
     }
@@ -223,16 +225,16 @@ window.addEventListener("DOMContentLoaded", function(){
         $("email").value    = item.email[1];
         
 //      Radio buttons regarding "Representational Style"
-        var radios = document.forms[0].repStyle;
-        for(var i=0; i<radios.length; i++){
-            if(radios[i].value == "auditory" && item.rep[1] == "auditory"){
-                radios[i].setAttribute("checked", "checked");
-            }else if(radios[i].value == "visual" && item.rep[1] == "visual"){
-                radios[i].setAttribute("checked", "checked");
-            }else if(radios[i].value == "kines" && item.rep[1] == "kines"){
-                radios[i].setAttribute("checked", "checked");
+        var radios1 = document.forms[0].repStyle;
+        for(var i=0; i<radios1.length; i++){
+            if(radios1[i].value == "auditory" && item.rep[1] == "auditory"){
+                radios1[i].setAttribute("checked", "checked");
+            }else if(radios1[i].value == "visual" && item.rep[1] == "visual"){
+                radios1[i].setAttribute("checked", "checked");
+            }else if(radios1[i].value == "kines" && item.rep[1] == "kines"){
+                radios1[i].setAttribute("checked", "checked");
             }
-        }
+        };
         
         $("direction").value    = item.direction[1];
         $("source").value       = item.source[1];
@@ -240,20 +242,20 @@ window.addEventListener("DOMContentLoaded", function(){
         $("level").value        = item.level[1];
         $("scope").value        = item.scope[1];
         $("change").value       = item.change[1];
-/*
+
 //      Radio buttons regarding "Channel"
-        var radios = document.forms[0].channel;
-        for(var i=0; i<radios.length; i++){
-            if(radios[i].value == "see" && item.channel[1] == "see"){
-                radios[i].setAttribute("checked", "checked");
-            }else if(radios[i].value == "hear" && item.channel[1] == "hear"){
-                radios[i].setAttribute("checked", "checked");
-            }else if(radios[i].value == "read" && item.channel[1] == "read"){
-                radios[i].setAttribute("checked", "checked");
-            }else if(radios[i].value == "do" && item.channel[1] == "do"){
-                radios[i].setAttribute("checked", "checked");
+        var radios2 = document.forms[0].channel;
+        for(var i=0; i<radios2.length; i++){
+            if(radios2[i].value == "see" && item.channel[1] == "see"){
+                radios2[i].setAttribute("checked", "checked");
+            }else if(radios2[i].value == "hear" && item.channel[1] == "hear"){
+                radios2[i].setAttribute("checked", "checked");
+            }else if(radios2[i].value == "read" && item.channel[1] == "read"){
+                radios2[i].setAttribute("checked", "checked");
+            }else if(radios2[i].value == "do" && item.channel[1] == "do"){
+                radios2[i].setAttribute("checked", "checked");
             }
-        }
+        };
         
 //      Radio buttons regarding "Convincers"
         var radios3 = document.forms[0].convincer;
@@ -267,8 +269,8 @@ window.addEventListener("DOMContentLoaded", function(){
             }else if(radios3[i].value == "consistent" && item.convincer[1] == "consistent"){
                     radios3[i].setAttribute("checked", "checked");
             }
-        }
-*/
+        };
+
 
         $("theor").value        = item.theor[1];
         $("util").value         = item.util[1];
@@ -277,7 +279,7 @@ window.addEventListener("DOMContentLoaded", function(){
         $("indiv").value        = item.indiv[1];
         $("trad").value         = item.trad[1];
 
-/*
+
 //      Radio buttons regarding "Social Style"
         var radios4 = document.forms[0].socialstyle;
         for(var i=0; i<radios4.length; i++){
@@ -290,8 +292,8 @@ window.addEventListener("DOMContentLoaded", function(){
             }else if(radios4[i].value == "analytical" && item.socialstyle[1] == "analytical"){
                 radios4[i].setAttribute("checked", "checked");
             }
-        }
-*/
+        };
+
 
         $("dom").value          = item.dom[1];
         $("inf").value          = item.inf[1];
