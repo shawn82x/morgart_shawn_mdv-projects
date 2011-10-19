@@ -15,7 +15,6 @@
     <title>Sales College of Northwest Ohio</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
     <script src="main.js" type="text/javascript"></script>
-    
     <script type="text/javascript">
         function showValue(num){
         var result = document.getElementById('result');     
@@ -72,10 +71,10 @@
             <h4>Meta-Programs</h4>
             <span>(Rank -10 to 10)</span>
             <ul>
-                <li><label for="direction">Direction: toward vs. away: </label></li>
-                <li><input type="range" id="direction" min="-10" max="10" onChange="showValue(this.value);"/><span id="result" ></span></li>
+                <li><label for="direction">Direction: toward vs. away: </label><span id="result" >0</span></li>
+                <li><input type="range" id="direction" min="-10" max="10" onChange="showValue(this.value);"/></li>
                 <li><label for="source">Source: internal vs. external: </label></li>
-                <li><input type="range" id="source" min="-10" max="10" /></li>
+                <li><input type="range" name="range" id="source" min="-10" max="10" /></li>
                 <li><label for="reason">Reason: options vs. procedures: </label></li>
                 <li><input type="range" id="reason" min="-10" max="10" /></li>
                 <li><label for="level">Level: proactive vs. reactive: </label></li>
