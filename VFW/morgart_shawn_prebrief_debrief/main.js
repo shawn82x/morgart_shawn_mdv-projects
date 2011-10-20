@@ -206,7 +206,7 @@ window.addEventListener("DOMContentLoaded", function(){
                 "email":    ["Email:", "john@doe.com"]
             },
             "testClient2": {
-                 "group":   ["Group:", "Commercial"],
+                "group":    ["Group:", "Commercial"],
                 "fname":    ["First Name:", "Brian"],
                 "lname":    ["Last Name:", "Boru"],
                 "street":   ["Street:", "9876 E. Sandusky St."],
@@ -259,7 +259,7 @@ window.addEventListener("DOMContentLoaded", function(){
         toggleControls("off");
         
         //populate the form fields with current localStorage values.
-        $("groups").value   = item.groups[1];
+        $("groups").value   = item.group[1];
         $("fname").value    = item.fname[1];
         $("lname").value    = item.lname[1];
         $("street").value   = item.street[1];
