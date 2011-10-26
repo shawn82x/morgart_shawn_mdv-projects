@@ -23,17 +23,18 @@ form {
 }
 
 h1 {
-    margin: auto;
+    font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    margin: 0px 0px 0px 5px;
     border: 5px outset #020141;
         -moz-border-radius: 10px;
         -webkit-border-radius: 10px;    
         -moz-box-shadow: 10px 10px 10px #000000;
         -webkit-box-shadow: 10px 10px 20px #000000;
-    padding: 5px;
     background-color: #999999;
+    padding: 5px;
     text-align: center;
     width: auto;
-    font-size: 20px;
+    font-size: 18px;
     
 }
 
@@ -100,6 +101,12 @@ input {
     padding: 5px;
 }
 
+input#search {
+    
+    margin: 20px 0px 20px 2px;
+    width: 280px;
+}
+
 
 a {
     margin: 20px 5px 20px 20px;
@@ -118,7 +125,7 @@ color: yellow;
 a:hover {color: red;}
 
 div {
-    padding: 40px 20px 40px 20px;
+    padding: 5px;
     margin: auto;
     border: outset #666666;
         -moz-border-radius: 10px;
@@ -126,13 +133,13 @@ div {
         -moz-box-shadow: 10px 10px 10px #000000;
         -webkit-box-shadow: 10px 10px 20px #000000;
     background-image: url(images/ios-linen.jpg);
-    width: 300px;
+    width: auto;
 
  /*   background-image: url(images/blue-scratched-texture.jpg);     */
 }
 
 span {
-    color: #5F0D00;
+    color: yellow;
     
 }
 
@@ -147,13 +154,15 @@ select {
 }
 
 img {
-    margin: 20px 0px 5px 0px;
+    margin: margin: 5px 5px 0px 5px;
     border: outset #666666;
         -moz-border-radius: 10px;
         -webkit-border-radius: 10px;
         -moz-box-shadow: 2px 2px 2px #000000;
         -webkit-box-shadow: 2px 2px 2px #000000;
     padding: 5px;
+    width: 290px;
+    height: 100px;
 }
 
 input { font-size: 14px; font-weight: bold;  }
@@ -168,6 +177,40 @@ font-size: 5.5em;
 font-weight: bold;
 }
 
+button#new {
+    font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    margin: 0px 0px 30px 2px;
+    height: 45px;
+    width: 300px;
+    background:
+        -webkit-gradient(linear,0% 0%,0% 100%,from(rgba(255,255,255,1)),to(rgba(185,185,185,1)));
+        -moz-linear-gradient(top,rgba(255,255,255,1),rgba(185,185,185,1));
+    border: outset #666666;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-box-shadow: 10px 10px 10px #000000;
+        -webkit-box-shadow: 10px 10px 20px #000000;
+    font-size: larger;
+
+}
+
+button {
+    font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    margin: 5px 0px 0px 2px;
+    height: auto;
+    width: 145px;
+    background:
+        -webkit-gradient(linear,0% 0%,0% 100%,from(rgba(255,255,255,1)),to(rgba(185,185,185,1)));
+        -moz-linear-gradient(top,rgba(255,255,255,1),rgba(185,185,185,1));
+    border: outset #666666;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-box-shadow: 10px 10px 10px #000000;
+        -webkit-box-shadow: 10px 10px 20px #000000;
+    font-size: small;
+    padding: 5px;
+
+}
 
 
 
