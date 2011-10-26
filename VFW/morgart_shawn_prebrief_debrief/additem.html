@@ -25,10 +25,8 @@
 </head>
 
 <body>
-    <div> 
         <h1>Sales College of Northwest Ohio</h1>
         <h2>Client Pre-Brief / De-Brief Form</h2>
-    </div>
     
         <a href='#' id="displayLink">Display Saved Data</a>
         <a href='additem.html' id="addNew" style="display: none;">Add New Client</a>
@@ -72,18 +70,19 @@
             <span>(Rank -10 to 10)</span>
             <ul>
                 <li><label for="direction">Direction: toward vs. away: </label><span id="result" >0</span></li>
-                <li><input type="range" id="direction" min="-10" max="10" onChange="showValue(this.value);"/></li>
-                <li><label for="source">Source: internal vs. external: </label></li>
-                <li><input type="range" name="range" id="source" min="-10" max="10" /></li>
-                <li><label for="reason">Reason: options vs. procedures: </label></li>
-                <li><input type="range" id="reason" min="-10" max="10" /></li>
-                <li><label for="level">Level: proactive vs. reactive: </label></li>
-                <li><input type="range" id="level" min="-10" max="10" /></li>
-                <li><label for="scope">Scope: big-picture vs. details: </label></li>
-                <li><input type="range" id="scope" min="-10" max="10" /></li>
-                <li><label for="change">Change: sameness vs. difference: </label></li>
-                <li><input type="range" id="change" min="-10" max="10" /></li>
+                <li><input type="range" name="range" id="direction" min="-10" max="10" onChange="showValue(this.value);"/></li>
+                <li><label for="source">Source: internal vs. external: </label><span id="result" >0</span></li>
+                <li><input type="range" name="range" id="source" min="-10" max="10" onChange="showValue(this.value);"/></li>
+                <li><label for="reason">Reason: options vs. procedures: </label><span id="result" >0</span></li>
+                <li><input type="range" name="range" id="reason" min="-10" max="10" onChange="showValue(this.value);"/></li>
+                <li><label for="level">Level: proactive vs. reactive: </label><span id="result" >0</span></li>
+                <li><input type="range" name="range" id="level" min="-10" max="10" onChange="showValue(this.value);"/></li>
+                <li><label for="scope">Scope: big-picture vs. details: </label><span id="result" >0</span></li>
+                <li><input type="range" name="range" id="scope" min="-10" max="10" onChange="showValue(this.value);"/></li>
+                <li><label for="change">Change: sameness vs. difference: </label><span id="result" >0</span></li>
+                <li><input type="range" name="range" id="change" min="-10" max="10" q/></li>
             </ul>
+<!--
             <h4>Channel</h4>
             <ul>
                 <li><input type="radio" value="see" id="see" name="channel" /><label for="see">See: Must see examples.</label></li>
@@ -98,6 +97,7 @@
                 <li><input type="radio" value="automatic" id="automatic" name="convincer" /><label for="automatic">Automatic: need partial information, assume the rest to decide.</label></li>
                 <li><input type="radio" value="consistent" id="consistent" name="convincer" /><label for="consistent">Consistent: never really convinced, get info Every time.</label></li>
             </ul>
+-->
         </fieldset>
         <fieldset>
             <legend>Values</legend>
@@ -119,6 +119,7 @@
         </fieldset>
         <fieldset>
             <legend>Behavioral Styles</legend>
+<!--
             <h4>Social Style</h4>
             <ul>
                 <li><input type="radio" value="driver" id="driver" name="socialstyle" /><label for="driver">Driver: work-focus / extrovert.</label></li>
@@ -126,7 +127,7 @@
                 <li><input type="radio" value="amiable" id="amiable" name="socialstyle" /><label for="amiable">Amiable: people-focus / introvert</label></li>
                 <li><input type="radio" value="analytical" id="analytical" name="socialstyle" /><label for="analytical">Analytical: work-focus / introvert.</label></li>
             </ul>            
-            
+-->          
             <h4>DISC</h4>
             <span>(Rank -10 to 10)</span>
             <ul>

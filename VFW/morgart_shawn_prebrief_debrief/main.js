@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", function(){
         var theElement = document.getElementById(x);
         return theElement;
     }
+    
    
     //Create select field element and populate with options
     function chooseGroup() {
@@ -39,7 +40,7 @@ window.addEventListener("DOMContentLoaded", function(){
             }
         }
     }
-    
+/*    
     function getRadioChannel(){
         var radios2 = document.forms[0].channel;
         for (var i=0; i<radios2.length; i++){
@@ -66,7 +67,7 @@ window.addEventListener("DOMContentLoaded", function(){
             }
         }
     }
-    
+*/    
    function toggleControls(n){
         switch(n){
             case "on":
@@ -101,9 +102,9 @@ window.addEventListener("DOMContentLoaded", function(){
         // Gather form field values and store in an object.
         // Object properties contain array with the form label an input value.
         getRadioRepstyle();
-        getRadioChannel();
-        getRadioConvincer();
-        getRadioSocialstyle();
+//        getRadioChannel();
+//        getRadioConvincer();
+//        getRadioSocialstyle();
         
         var item            = {};
             item.groups     = ["Type of Account:", $("groups").value];
@@ -125,9 +126,9 @@ window.addEventListener("DOMContentLoaded", function(){
             item.scope      = ["Scope big-picture vs. details:", $("scope").value];
             item.change     = ["Change sameness vs. difference:", $("change").value];
             item.lineBreak3 = [" ", lineBreak];
-            item.chan       = ["Channel:", channelValue];
-            item.conv       = ["Convincer:", convincerValue];
-            item.lineBreak4 = [" ", lineBreak];
+//            item.chan       = ["Channel:", channelValue];
+//            item.conv       = ["Convincer:", convincerValue];
+//            item.lineBreak4 = [" ", lineBreak];
             item.theor      = ["Theoretical:", $("theor").value];
             item.util       = ["Utilitarian:", $("util").value];
             item.aesth      = ["Aesthetic:", $("aesth").value];
@@ -135,8 +136,8 @@ window.addEventListener("DOMContentLoaded", function(){
             item.indiv      = ["Individualistic:", $("indiv").value];
             item.trad       = ["Traditional:", $("trad").value];
             item.lineBreak5 = [" ", lineBreak];
-            item.social     = ["Social Style:", socialstyleValue];
-            item.lineBreak6 = [" ", lineBreak];
+//            item.social     = ["Social Style:", socialstyleValue];
+//            item.lineBreak6 = [" ", lineBreak];
             item.dom        = ["Dominance:", $("dom").value];
             item.inf        = ["Influencing:", $("inf").value];
             item.stead      = ["Steadiness:", $("stead").value];
@@ -289,7 +290,7 @@ window.addEventListener("DOMContentLoaded", function(){
         $("change").value       = item.change[1];
 
 //      Radio buttons regarding "Channel"
-        var radios2 = document.forms[0].channel;
+/*        var radios2 = document.forms[0].channel;
         for(var i=0; i<radios2.length; i++){
             if(radios2[i].value == "see" && item.channel[1] == "see"){
                 radios2[i].setAttribute("checked", "checked");
@@ -315,7 +316,7 @@ window.addEventListener("DOMContentLoaded", function(){
                     radios3[i].setAttribute("checked", "checked");
             }
         };
-
+*/
 
         $("theor").value        = item.theor[1];
         $("util").value         = item.util[1];
@@ -326,7 +327,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 
 //      Radio buttons regarding "Social Style"
-        var radios4 = document.forms[0].socialstyle;
+/*        var radios4 = document.forms[0].socialstyle;
         for(var i=0; i<radios4.length; i++){
             if(radios4[i].value == "driver" && item.socialstyle[1] == "driver"){
                 radios4[i].setAttribute("checked", "checked");
@@ -338,7 +339,7 @@ window.addEventListener("DOMContentLoaded", function(){
                 radios4[i].setAttribute("checked", "checked");
             }
         };
-
+*/
 
         $("dom").value          = item.dom[1];
         $("inf").value          = item.inf[1];
@@ -469,6 +470,8 @@ window.addEventListener("DOMContentLoaded", function(){
         }
       
     }
+    
+    
     
     
     //Variable defaults

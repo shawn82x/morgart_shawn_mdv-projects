@@ -9,11 +9,9 @@ for: Visual Frameworks 1110: Project 2
 body {
     background-image: url(images/blue-scratched-texture.jpg);  
 
-/*    background-image: url(images/ios-linen.jpg);     */
 }
 
 form {
-    padding: 40px 20px 40px 20px;
     margin: 20px 180px 20px 20px;
     border: outset #666666;
         -moz-border-radius: 10px;
@@ -21,23 +19,21 @@ form {
         -moz-box-shadow: 10px 10px 10px #000000;
         -webkit-box-shadow: 10px 10px 20px #000000;
     background-image: url(images/ios-linen.jpg);
-    width: 640;
-    
-
-/*    background-image: url(images/blue-scratched-texture.jpg);   */
+    width: auto;
 }
 
 h1 {
     margin: auto;
     border: 5px outset #020141;
         -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
+        -webkit-border-radius: 10px;    
         -moz-box-shadow: 10px 10px 10px #000000;
         -webkit-box-shadow: 10px 10px 20px #000000;
-    padding: 10px 10px 10px 20px;
+    padding: 5px;
     background-color: #999999;
     text-align: center;
-    width: 640px;
+    width: auto;
+    font-size: 20px;
     
 }
 
@@ -51,7 +47,8 @@ h2 {
     padding: 10px 10px 10px 20px;
     background-color: #999999;
     text-align: center;
-    width: 640px;
+    font-size: medium;
+    width: auto;
 }
 
 h4 {
@@ -67,7 +64,7 @@ fieldset {
         -moz-box-shadow: 10px 10px 10px #000000;
         -webkit-box-shadow: 10px 10px 20px #000000;
     padding-left: 20px;
-    width: 480px;
+    width: auto;
     background-color: #999999;
     
 }
@@ -122,13 +119,14 @@ a:hover {color: red;}
 
 div {
     padding: 40px 20px 40px 20px;
-    margin: 20px 180px 20px 20px;
+    margin: auto;
     border: outset #666666;
         -moz-border-radius: 10px;
         -webkit-border-radius: 10px;
         -moz-box-shadow: 10px 10px 10px #000000;
         -webkit-box-shadow: 10px 10px 20px #000000;
     background-image: url(images/ios-linen.jpg);
+    width: 300px;
 
  /*   background-image: url(images/blue-scratched-texture.jpg);     */
 }
@@ -148,16 +146,6 @@ select {
     margin: 10px;
 }
 
-input type=range:before { content: attr(min); padding-right: 5px; }
-
-input[type=range]:after { content: attr(max); padding-left: 5px;}
-
-output {
-display: block;
-font-size: 5.5em;
-font-weight: bold;
-}
-
 img {
     margin: 20px 0px 5px 0px;
     border: outset #666666;
@@ -167,6 +155,19 @@ img {
         -webkit-box-shadow: 2px 2px 2px #000000;
     padding: 5px;
 }
+
+input { font-size: 14px; font-weight: bold;  }
+
+input[type=range]:before { content: attr(min); padding-right: 5px; }
+
+input[type=range]:after { content: attr(max); padding-left: 5px;}
+
+output {
+display: block;
+font-size: 5.5em;
+font-weight: bold;
+}
+
 
 
 
