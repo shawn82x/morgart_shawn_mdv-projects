@@ -4,6 +4,11 @@
 
 //Wait until the DOM is ready.
 window.addEventListener("DOMContentLoaded", function(){
+    
+    //When CTA button is clicked move to New Client form
+    function changePage(){
+        additem.html;
+    }
    
    
    
@@ -475,7 +480,7 @@ window.addEventListener("DOMContentLoaded", function(){
     
     
     //Variable defaults
-    var taskGroup = ["-- Choose --", "Residential", "Commercial", "Medical", "Upgrade"];
+    var taskGroup = ["-- Choose --", "Residential", "Commercial", "Medical", "Fire", "Takeover", "Upgrade", ];
      //   taskType;
     var lineBreak = "----------------------------------------";
     chooseGroup();
