@@ -104,7 +104,7 @@ input {
 input#search {
     
     margin: 20px 0px 20px 2px;
-    width: 280px;
+    width: 180px;
 }
 
 
@@ -192,6 +192,23 @@ button#new {
         -webkit-box-shadow: 10px 10px 20px #000000;
     font-size: larger;
 
+}
+
+button#sbutton {
+    font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    margin: 5px 0px 5px 2px;
+    height: auto;
+    width: 100px;
+    background:
+        -webkit-gradient(linear,0% 0%,0% 100%,from(rgba(255,255,255,1)),to(rgba(185,185,185,1)));
+        -moz-linear-gradient(top,rgba(255,255,255,1),rgba(185,185,185,1));
+    border: outset #666666;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-box-shadow: 10px 10px 10px #000000;
+        -webkit-box-shadow: 10px 10px 20px #000000;
+    font-size: small;
+    padding: 5px;
 }
 
 button {
