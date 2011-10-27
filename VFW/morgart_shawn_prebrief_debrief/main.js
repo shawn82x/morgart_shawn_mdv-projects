@@ -4,15 +4,7 @@
 
 //Wait until the DOM is ready.
 window.addEventListener("DOMContentLoaded", function(){
-    
-    //When CTA button is clicked move to New Client form
-    function changePage(){
-        additem.html;
-    }
    
-   
-   
-
     //getElementById Function
     function $(x){
         var theElement = document.getElementById(x);
