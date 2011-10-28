@@ -523,7 +523,7 @@ window.addEventListener("DOMContentLoaded", function(){
     
      // JSON Object which will auto populate local storage.
      
-    function autoFillData(){
+/*    function autoFillData(){
         var json = {
             "testClient1": {
                 "group":    ["Group:", "Residential"],
@@ -581,7 +581,7 @@ window.addEventListener("DOMContentLoaded", function(){
         }
 
     }
-    
+*/    
     function autoFillCom(){
         var json = {
             "testClient1": {
