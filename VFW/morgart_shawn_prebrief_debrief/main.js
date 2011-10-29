@@ -1,4 +1,4 @@
-// Visual Frameworks 1110; Project 3
+// Mobile Interfaces and Usability 1111; Project 2
 
 // Author: Shawn R. Morgart
 
