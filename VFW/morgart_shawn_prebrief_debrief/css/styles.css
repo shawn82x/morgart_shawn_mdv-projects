@@ -4,7 +4,7 @@ title: additem.html Styles
 author: Shawn R. Morgart
 for: Visual Frameworks 1110: Project 2
 
-*/
+
 
 body {
     background-image: url(images/blue-scratched-texture.jpg);  
@@ -100,9 +100,9 @@ input {
     border: 3px inset #020141;
         -moz-border-radius: 7px;
         -webkit-border-radius: 7px;
-/*        -moz-box-shadow: 10px 10px 10px #000000;
+        -moz-box-shadow: 10px 10px 10px #000000;
         -webkit-box-shadow: 10px 10px 20px #000000;
-*/
+
     padding: 5px;
 }
 
@@ -144,7 +144,7 @@ div {
     background-image: url(images/ios-linen.jpg);
     width: auto;
 
- /*   background-image: url(images/blue-scratched-texture.jpg);     */
+   background-image: url(images/blue-scratched-texture.jpg);
 }
 
 span {
@@ -161,19 +161,13 @@ span {
 select {
     margin: 10px;
 }
-
+*/
 img {
-    margin: margin: 5px 5px 0px 5px;
-    border: outset #666666;
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
-        -moz-box-shadow: 2px 2px 2px #000000;
-        -webkit-box-shadow: 2px 2px 2px #000000;
-    padding: 5px;
-    width: 290px;
-    height: 85px;
+    margin-top: 5px;
+    width: 320px;
+    height: 100px;
 }
-
+/*
 input { font-size: 14px; font-weight: bold;  }
 
 input[type=range]:before { content: attr(min); padding-right: 5px; }
@@ -238,6 +232,7 @@ button {
 
 }
 
+*/
 
 
 

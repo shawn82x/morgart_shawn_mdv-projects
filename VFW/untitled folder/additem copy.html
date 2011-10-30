@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<!-- Shawn R. Morgart, MiU-1111, Project 2-->
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Page 2. A task list for work and personal life." />
+    <meta name="keywords" content="task, do it now, Git 'R Done" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="user-scalable=no, width=device-width" />
+    <meta name="viewport" content="target-densitydpi=device-dpi" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <title>Sales College of Northwest Ohio</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <script src="main.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function showValue(num){
+        var result = document.getElementById('result');     
+        result.innerHTML = num;
+        }
+    </script>
+    
+</head>
+
+<body>
+<!--    <h1>Sales College of Northwest Ohio</h1>
+    <h2>Client Pre-Brief / De-Brief Form</h2>
+-->
+    <img src="images/key_visual1.jpg" >
+        
+    <a href='#' id="displayLink">Display Data</a>
+    <a href='additem.html' id="addNew" style="display: none;">Add New Client</a>
+    <a href='#' id="clearLink">Clear Data</a>
+        
+<!--    <form action="#" method="post" id="contactForm">        -->
+        <fieldset>
+            <legend>Client Details</legend>
+            <span>* fields are required.</span>
+            <ul id="errors"></ul>
+            <ul>
+                <li id="select"><label for="group">*Type of Account:</label><br /></li>
+                <li><label for="fname">*First Name: </label></li>
+                <li><input type="text" id="fname" placeholder="John" /></li>
+                <li><label for="lname">*Last Name: </label></li>
+                <li><input type="text" id="lname" placeholder="Smith" /></li>
+                <li><label for="street">*Street: </label></li>
+                <li><input type="text" id="street" placeholder="123 Main St." /></li>
+                <li><label for="city">*City: </label></li>
+                <li><input type="text" id="city" placeholder="Anytown" /></li>
+                <li><label for="state">State: </label></li>
+                <li><input type="text" id="state" placeholder="YourState" /></li>
+                <li><label for="zip">Zip: </label></li>
+                <li><input type="text" id="zip" placeholder="12345" /></li>
+                <li><label for="phone">*Phone: </label></li>
+                <li><input type="tel" id="phone" placeholder="123-456-7890" /></li>
+                <li><label for="email">*Email: </label></li>
+                <li><input type="email" id="email" placeholder="email@email.com" /></li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Neurolinguistics</legend>
+            <h4>Representational Style</h4>
+            <span>Ask a Thought-Provoking Question...</span>
+            <ul>
+                <li><input type="radio" value="auditory" id="auditory" name="repStyle" /><label for="auditory">Auditory: looks side to side. Talk = Medium.</label></li>
+                <li><input type="radio" value="visual" id="visual" name="repStyle" /><label for="visual">Visual: looks defocused or up-left or up-right. Talk = Fast.</label></li>
+                <li><input type="radio" value="kines" id="kines" name="repStyle" /><label for="kines">Kinesthetic: looks down and right. Talk = Slow. "Feeling" words.</label></li>
+            </ul>
+            <h4>Meta-Programs</h4>
+            <span>(Rank -10 to 10)</span>
+            <ul>
+                <li><label for="direction">Direction: toward vs. away: </label><span id="result" >0</span></li>
+                <li><input type="range" name="range" id="direction" min="-10" max="10" onChange="showValue(this.value);"/></li>
+                <li><label for="source">Source: internal vs. external: </label><span id="result" >0</span></li>
+                <li><input type="range" name="range" id="source" min="-10" max="10" onChange="showValue(this.value);"/></li>
+                <li><label for="reason">Reason: options vs. procedures: </label><span id="result" >0</span></li>
+                <li><input type="range" name="range" id="reason" min="-10" max="10" onChange="showValue(this.value);"/></li>
+                <li><label for="level">Level: proactive vs. reactive: </label><span id="result" >0</span></li>
+                <li><input type="range" name="range" id="level" min="-10" max="10" onChange="showValue(this.value);"/></li>
+                <li><label for="scope">Scope: big-picture vs. details: </label><span id="result" >0</span></li>
+                <li><input type="range" name="range" id="scope" min="-10" max="10" onChange="showValue(this.value);"/></li>
+                <li><label for="change">Change: sameness vs. difference: </label><span id="result" >0</span></li>
+                <li><input type="range" name="range" id="change" min="-10" max="10" q/></li>
+            </ul>
+<!--
+            <h4>Channel</h4>
+            <ul>
+                <li><input type="radio" value="see" id="see" name="channel" /><label for="see">See: Must see examples.</label></li>
+                <li><input type="radio" value="hear" id="hear" name="channel" /><label for="hear">Hear: Must hear how or hear about.</label></li>
+                <li><input type="radio" value="read" id="read" name="channel" /><label for="read">Read: Must read information themselves.</label></li>
+                <li><input type="radio" value="do" id="do" name="channel" /><label for="do">Do: Must do it or use it to be convinced.</label></li>
+            </ul>
+            <h4>Convincer</h4>
+            <ul>
+                <li><input type="radio" value="overtime" id="overtime" name="convincer" /><label for="overtime">Period of Time: data must remain Consistant.</label></li>
+                <li><input type="radio" value="repetition" id="repetition" name="convincer" /><label for="repetition">Repetition: must have data a particular number of times.</label></li>
+                <li><input type="radio" value="automatic" id="automatic" name="convincer" /><label for="automatic">Automatic: need partial information, assume the rest to decide.</label></li>
+                <li><input type="radio" value="consistent" id="consistent" name="convincer" /><label for="consistent">Consistent: never really convinced, get info Every time.</label></li>
+            </ul>
+-->
+        </fieldset>
+        <fieldset>
+            <legend>Values</legend>
+            <span>(Rank 0 to 100)</span>
+            <ul>
+                <li><label for="theor">Theoretical: knowledge, problem solver.</label></li>
+                <li><input type="range" id="theor" min="0" max="100" value="0" step="5" /></li>
+                <li><label for="util">Utilitarian: practicality, money.</label></li>
+                <li><input type="range" id="util" min="0" max="100" value="0" step="5" /></li>
+                <li><label for="aesth">Aesthetic: creativity, enjoyment.</label></li>
+                <li><input type="range" id="aesth" min="0" max="100" value="0" step="5" /></li>
+                <li><label for="soci">Social: selflessness, generosity.</label></li>
+                <li><input type="range" id="soci" min="0" max="100" value="0" step="5" /></li>
+                <li><label for="indiv">Individualistic: leading, achieving.</label></li>
+                <li><input type="range" id="indiv" min="0" max="100" value="0" step="5" /></li>
+                <li><label for="trad">Traditional: by the "book".</label></li>
+                <li><input type="range" id="trad" min="0" max="100" value="0" step="5" /></li>
+            <ul>
+        </fieldset>
+<!--        
+        <fieldset>
+            <legend>Behavioral Styles</legend>
+
+            <h4>Social Style</h4>
+            <ul>
+                <li><input type="radio" value="driver" id="driver" name="socialstyle" /><label for="driver">Driver: work-focus / extrovert.</label></li>
+                <li><input type="radio" value="expressive" id="expressive" name="socialstyle" /><label for="expressive">Expressive: people-focus / extrovert.</label></li>
+                <li><input type="radio" value="amiable" id="amiable" name="socialstyle" /><label for="amiable">Amiable: people-focus / introvert</label></li>
+                <li><input type="radio" value="analytical" id="analytical" name="socialstyle" /><label for="analytical">Analytical: work-focus / introvert.</label></li>
+            </ul>            
+          
+            <h4>DISC</h4>
+            <span>(Rank -10 to 10)</span>
+            <ul>
+                <li><label for="dom">Dominance: calculating vs. agressive. </label></li>
+                <li><input type="range" id="dom" min="-10" max="10" /></li>
+                <li><label for="inf">Influencing: reserved vs. outgoing. </label></li>
+                <li><input type="range" id="inf" min="-10" max="10" /></li>
+                <li><label for="stead">Steadiness: unstructured vs. structured. </label></li>
+                <li><input type="range" id="stead" min="-10" max="10" /></li>
+                <li><label for="comp">Compliance: makes own rules vs. follows The rules.</label></li>
+                <li><input type="range" id="comp" min="-10" max="10" /></li>
+            </ul>
+        </fieldset>
+-->
+        <input type="submit" value="Save Client" input="submit" id="submit" /><br />
+
+</body>
+</html>
