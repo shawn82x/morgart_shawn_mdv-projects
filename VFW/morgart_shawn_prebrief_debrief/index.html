@@ -29,18 +29,10 @@
         <div data-role="content">
             <p><a href="#newclPage" data-role="button" data-theme="e">Add New Client Profile!</a></p>
         </div>
-<!--      
-        <div data-role="controlgroup">
-            <a href="#resiPage" data-role="button" data-theme="b" data-transition="fade">Browse Residential Customers</a>
-            <a href="#commPage" data-role="button" data-theme="b" data-transition="fade">Browse Commercial Customers</a>
-            <a href="mediPage" data-role="button" data-theme="b" data-transition="fade">Browse Medical Alert Customers</a>
-            <a href="firePage" data-role="button" data-theme="b" data-transition="fade">Browse Fire Monitor Customers</a>
-            <a href="potePage" data-role="button" data-theme="b" data-transition="fade">Browse Potential Takeovers</a>
-        </div>
--->        
+
         <ul data-role="listview" data-inset="true" data-theme="b" data-count-theme="a">
             <li data-role="divider" data-inset="true" data-theme="a" >Browse Saved Clients</li>
-            <li><a href="#resiPage">Residential</a></li>
+            <li><a href="#residPage">Residential</a></li>
             <li><a href="#commPage">Commercial</a></li>
             <li><a href="#firePage">Fire Monitoring</a></li>
             <li><a href="#mediPage">Medical Alert</a></li>
@@ -70,6 +62,8 @@
 -->
     </div>
     
+    
+<!-- Add New Client Page  -->    
     <div data-role="page" id="newclPage" data-add-back-btn="true">
         <div data-role="header">
             <img src="images/key_visual1.jpg" >        
@@ -229,7 +223,10 @@
     
     </div>
     
-    <div data-role="page" id="resiPage" data-add-back-btn="true">
+    </div>
+        
+<!-- RESIDENTIAL CLIENTS LIST PAGE -->    
+    <div data-role="page" id="residPage" data-add-back-btn="true">
         <div data-role="header" data-position="fixed">
 	    <H1>Residential:</H1>
 	</div>
@@ -237,7 +234,8 @@
     </div>
     
     </div>
-    
+
+<!-- COMMERCIAL CLIENTS LIST PAGE --> 
     <div data-role="page" id="commPage" data-add-back-btn="true">
         <div data-role="header" data-position="fixed">
 	    <H1>Commercial:</H1>
@@ -246,7 +244,8 @@
     </div>
     
     </div>
-    
+
+<!-- FIRE MONITORING CLIENTS LIST PAGE --> 
     <div data-role="page" id="firePage" data-add-back-btn="true">
         <div data-role="header" data-position="fixed">
 	    <H1>Fire Monitoring:</H1>
@@ -256,6 +255,7 @@
     
     </div>
     
+<!-- MEDICAL ALERT CLIENTS LIST PAGE --> 
     <div data-role="page" id="mediPage" data-add-back-btn="true">
         <div data-role="header" data-position="fixed">
 	    <H1>Medical Alert:</H1>
@@ -264,13 +264,17 @@
     </div>
     
     </div>
-    
+
+<!-- TAKEOVER CLIENTS LIST PAGE --> 
     <div data-role="page" id="potePage" data-add-back-btn="true">
         <div data-role="header" data-position="fixed">
-	    <H1>Potential Takeovers:</H1>
+	    <H1>Takeovers:</H1>
 	</div>
 
     </div>
+    
+    </div>
+    
     <!-- JavaScript under here -->
     <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
