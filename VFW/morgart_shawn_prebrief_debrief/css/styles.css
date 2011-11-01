@@ -1,4 +1,4 @@
-/*
+
 
 title: additem.html Styles
 author: Shawn R. Morgart
@@ -6,11 +6,11 @@ for: Visual Frameworks 1110: Project 2
 
 
 
-body {
+div {
     background-image: url(images/blue-scratched-texture.jpg);  
 
 }
-
+/*
 form {
     margin: 20px 180px 20px 20px;
     border: outset #666666;

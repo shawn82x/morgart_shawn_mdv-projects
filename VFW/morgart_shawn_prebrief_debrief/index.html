@@ -19,7 +19,7 @@
 
 <body>
 
-    <div data-role="page">
+    <div data-role="page" id="home">
         <div data-role="header" >
             <label for="search-basic" class="ui-hidden-accessible">Search for Client</label>
             <input type="search" name="search" id="search-basic" value="" data-theme="c" placeholder="Search for Client"/>
@@ -37,29 +37,14 @@
             <li><a href="#firePage">Fire Monitoring</a></li>
             <li><a href="#mediPage">Medical Alert</a></li>
             <li><a href="#potePage">Potential Takeovers</a></li>
+            <li><a href='' onclick="getData">Display Data</a></li>
+            <li><a var displayLink = $("displayLink") displayLink.addEventListener("click", getData)</a></li>
         </ul>
 
         <div data-role="footer" >
             <h3>MiU 1111 : Project 2</h3>        
-        </div>            
-            
-            
-<!--            <button id="new" type="submit" onclick="location.href='additem.html'">Add New Client Profile</button>
-            
-            <span>Browse Clients by Category</span>
-            <button id='displayResi' name='displayResi' type="submit" >View Residential Customers</button>
-            <button id='displayComm' type="submit" onclick="location.href='additem.html'">View Commercial Customers</button>
-            <button id='displayMedi' type="submit" onclick="location.href='additem.html'">View Medical Alert Customers</button>
-            <button id='displayFire' type="submit" onclick="location.href='additem.html'">View Fire Monitor Customers</button>
-            <button id='displayTake' type="submit" onclick="location.href='additem.html'">View Potential Takeovers</button>
-            <button id='displayUpgrade' type="submit" onclick="location.href='additem.html'">View Upgraded Customers</button>
-            
-            <input type="text" id="search" placeholder="Search by Client Name" />
-            <button id="sbutton" type="submit" >Search</button>
-            
-            <button id="ghmaster" type="submit" onclick="location.href='https://github.com/shawn82x/morgart_shawn_mdv-projects'">GH Master</button>
-            <button id="ghmaster" type="submit" onclick="location.href='http://shawn82x.github.com/morgart_shawn_mdv-projects/VFW/morgart_shawn_prebrief_debrief/index.html'">GH Pages</button>
--->
+        </div>
+        
     </div>
     
     
@@ -217,7 +202,7 @@
 	</div>
         
         <div data-role="content">
-            <p><a href="" data-role="button" data-theme="e" >Save Client Data</a></p>     
+            <p><a href="submit" data-role="button" data-theme="e" >Save Client Data</a></p>     
         </div> 
 	
     

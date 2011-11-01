@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", function(){
             }
         }
     }
-/*    
+    
     function getRadioChannel(){
         var radios2 = document.forms[0].channel;
         for (var i=0; i<radios2.length; i++){
@@ -64,7 +64,7 @@ window.addEventListener("DOMContentLoaded", function(){
             }
         }
     }
-*/    
+    
    function toggleControls(n){
         switch(n){
             case "on":
@@ -99,9 +99,9 @@ window.addEventListener("DOMContentLoaded", function(){
         // Gather form field values and store in an object.
         // Object properties contain array with the form label an input value.
         getRadioRepstyle();
-//        getRadioChannel();
-//        getRadioConvincer();
-//        getRadioSocialstyle();
+        getRadioChannel();
+        getRadioConvincer();
+        getRadioSocialstyle();
         
         var item            = {};
             item.groups     = ["Type of Account:", $("groups").value];
@@ -123,9 +123,9 @@ window.addEventListener("DOMContentLoaded", function(){
             item.scope      = ["Scope big-picture vs. details:", $("scope").value];
             item.change     = ["Change sameness vs. difference:", $("change").value];
             item.lineBreak3 = [" ", lineBreak];
-//            item.chan       = ["Channel:", channelValue];
-//            item.conv       = ["Convincer:", convincerValue];
-//            item.lineBreak4 = [" ", lineBreak];
+            item.chan       = ["Channel:", channelValue];
+            item.conv       = ["Convincer:", convincerValue];
+            item.lineBreak4 = [" ", lineBreak];
             item.theor      = ["Theoretical:", $("theor").value];
             item.util       = ["Utilitarian:", $("util").value];
             item.aesth      = ["Aesthetic:", $("aesth").value];
@@ -133,14 +133,14 @@ window.addEventListener("DOMContentLoaded", function(){
             item.indiv      = ["Individualistic:", $("indiv").value];
             item.trad       = ["Traditional:", $("trad").value];
             item.lineBreak5 = [" ", lineBreak];
-//            item.social     = ["Social Style:", socialstyleValue];
-//            item.lineBreak6 = [" ", lineBreak];
+            item.social     = ["Social Style:", socialstyleValue];
+            item.lineBreak6 = [" ", lineBreak];
             item.dom        = ["Dominance:", $("dom").value];
             item.inf        = ["Influencing:", $("inf").value];
             item.stead      = ["Steadiness:", $("stead").value];
             item.comp       = ["Compliance:", $("comp").value];
             
-        // Save data into Local Storage: Use Stringify to convert our object to a string.
+// Save data into Local Storage: Use Stringify to convert our object to a string.
         localStorage.setItem(id, JSON.stringify(item));
         alert("Contact Saved!");
     }
@@ -196,7 +196,7 @@ window.addEventListener("DOMContentLoaded", function(){
             },
         
         };
-        // Store the JSON Object into Local Storage
+// Store the JSON Object into Local Storage
         for(var n in json){    
             var id                  = Math.floor(Math.random()*1000000001);
             localStorage.setItem(id, JSON.stringify(json[n]));
@@ -212,7 +212,7 @@ window.addEventListener("DOMContentLoaded", function(){
             
         }
         
-        //Write Data from Local Storage to the browser.
+    //Write Data from Local Storage to the browser.
         var makeDiv = document.createElement('div');
         makeDiv.setAttribute("id", "items");
         var makeList = document.createElement('ul');
@@ -225,7 +225,7 @@ window.addEventListener("DOMContentLoaded", function(){
             makeList.appendChild(makeli);
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
-            // Convert the string from local storage value back to an object by using JSON.parse().
+    // Convert the string from local storage value back to an object by using JSON.parse().
             var obj = JSON.parse(value);
             var makeSubList = document.createElement('ul');
             makeli.appendChild(makeSubList);
@@ -241,7 +241,7 @@ window.addEventListener("DOMContentLoaded", function(){
         }
     }
     
-    // Get the image for the correct category
+// Get the image for the correct category
     function getImage(catName, makeSubList){
         var imageLi = document.createElement('li');
         makeSubList.appendChild(imageLi);
@@ -251,9 +251,9 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     
-    //Make Item Links... create the edit and delet links for each stored item.
+//Make Item Links... create the edit and delet links for each stored item.
     function makeItemLinks(key, linksLi){
-        //add edit single item link
+    //add edit single item link
         var editLink = document.createElement('a');
         editLink.href = "#";
         editLink.key = key;
@@ -262,11 +262,11 @@ window.addEventListener("DOMContentLoaded", function(){
         editLink.innerHTML = editText;
         linksLi.appendChild(editLink);
         
-        //add line-break
+    //add line-break
         var breakTag = document.createElement('br');
         linksLi.appendChild(breakTag);
      
-        //add delete item link
+    //add delete item link
         var deleteLink = document.createElement('a');
         deleteLink.href = "#";
         deleteLink.key = key;
@@ -277,14 +277,14 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     function editItem(){
-        //Grab the data from our item from Local Storage.
+    //Grab the data from our item from Local Storage.
         var value = localStorage.getItem(this.key);
         var item = JSON.parse(value);
         
-        // Show the form
+    // Show the form
         toggleControls("off");
         
-        //populate the form fields with current localStorage values.
+    //populate the form fields with current localStorage values.
         $("groups").value   = item.group[1];
         $("fname").value    = item.fname[1];
         $("lname").value    = item.lname[1];
@@ -295,7 +295,7 @@ window.addEventListener("DOMContentLoaded", function(){
         $("phone").value    = item.phone[1];
         $("email").value    = item.email[1];
         
-//      Radio buttons regarding "Representational Style"
+    //Radio buttons regarding "Representational Style"
         var radios1 = document.forms[0].repStyle;
         for(var i=0; i<radios1.length; i++){
             if(radios1[i].value == "auditory" && item.rep[1] == "auditory"){
@@ -314,8 +314,8 @@ window.addEventListener("DOMContentLoaded", function(){
         $("scope").value        = item.scope[1];
         $("change").value       = item.change[1];
 
-//      Radio buttons regarding "Channel"
-/*        var radios2 = document.forms[0].channel;
+    //Radio buttons regarding "Channel"
+        var radios2 = document.forms[0].channel;
         for(var i=0; i<radios2.length; i++){
             if(radios2[i].value == "see" && item.channel[1] == "see"){
                 radios2[i].setAttribute("checked", "checked");
@@ -328,7 +328,7 @@ window.addEventListener("DOMContentLoaded", function(){
             }
         };
         
-//      Radio buttons regarding "Convincers"
+    //Radio buttons regarding "Convincers"
         var radios3 = document.forms[0].convincer;
         for(var i=0; i<radios3.length; i++){
             if(radios3[i].value == "overtime" && item.convincer[1] == "overtime"){
@@ -341,7 +341,7 @@ window.addEventListener("DOMContentLoaded", function(){
                     radios3[i].setAttribute("checked", "checked");
             }
         };
-*/
+
 
         $("theor").value        = item.theor[1];
         $("util").value         = item.util[1];
@@ -351,8 +351,8 @@ window.addEventListener("DOMContentLoaded", function(){
         $("trad").value         = item.trad[1];
 
 
-//      Radio buttons regarding "Social Style"
-/*        var radios4 = document.forms[0].socialstyle;
+    //Radio buttons regarding "Social Style"
+        var radios4 = document.forms[0].socialstyle;
         for(var i=0; i<radios4.length; i++){
             if(radios4[i].value == "driver" && item.socialstyle[1] == "driver"){
                 radios4[i].setAttribute("checked", "checked");
@@ -364,20 +364,20 @@ window.addEventListener("DOMContentLoaded", function(){
                 radios4[i].setAttribute("checked", "checked");
             }
         };
-*/
+
 
         $("dom").value          = item.dom[1];
         $("inf").value          = item.inf[1];
         $("stead").value        = item.stead[1];
         $("comp").value         = item.comp[1];
        
-        // Remove the initial listener from the input "save contact" button.
+    // Remove the initial listener from the input "save contact" button.
         save.removeEventListener("click", storeData);
         //Change Submit Button Value to Edit Button
         $('submit').value = "Edit Client";
         var editSubmit = $('submit');
-        //Save the key value established in this function as a property of the editSubmit event
-        //so we can use that value when we save the data we edited.
+    //Save the key value established in this function as a property of the editSubmit event
+    //so we can use that value when we save the data we edited.
         editSubmit.key = this.key;
         editSubmit.addEventListener("click", validate);
         
@@ -405,7 +405,7 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     function validate(e){
-        //Define the elements I want to check
+    //Define the elements I want to check
         var getGroup    = $("groups");
         var getFname    = $("fname");
         var getLname    = $("lname");
@@ -414,7 +414,7 @@ window.addEventListener("DOMContentLoaded", function(){
         var getPhone    = $("phone");
         var getEmail    = $("email");
         
-        //reset error messages.
+    //reset error messages.
         errMsg.innerHTML = "";
             getGroup.style.border   = "1px solid black";
             getFname.style.border   = "1px solid black";
@@ -425,51 +425,51 @@ window.addEventListener("DOMContentLoaded", function(){
             getEmail.style.border   = "1px solid black";
 
         
-        //Get Error messages
+    //Get Error messages
         var messageAry = [ ];
-        // Group validation
+    // Group validation
         if(getGroup.value === "-- Choose --"){
             var groupError = "Please choose an Account Type!";
             getGroup.style.border = "1px solid red";
             messageAry.push(groupError);
         }
         
-        // First Name validation
+    // First Name validation
         if(getFname.value === ""){
             var fNameError = "Please enter a first name!";
             getFname.style.border = "1px solid red";
             messageAry.push(fNameError);
         }
         
-        // Last name validation
+    // Last name validation
         if(getLname.value === ""){
             var lNameError = "Please enter a Last name!";
             getLname.style.border = "1px solid red";
             messageAry.push(lNameError);
         }
         
-        // Street validation
+    // Street validation
         if(getStreet.value === ""){
             var streetError = "Please enter a Street!";
             getStreet.style.border = "1px solid red";
             messageAry.push(streetError);
         }
         
-        // City validation
+    // City validation
         if(getCity.value === ""){
             var cityError = "Please enter a City!";
             getCity.style.border = "1px solid red";
             messageAry.push(cityError);
         }
         
-        // Phone validation
+    // Phone validation
         if(getPhone.value === ""){
             var phoneError = "Please enter a Phone number!";
             getPhone.style.border = "1px solid red";
             messageAry.push(phoneError);
         }
         
-        // Email validation
+    // Email validation
         var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if(!(re.exec(getEmail.value))){
             var emailError = "Please enter a valid email address!";
@@ -477,7 +477,7 @@ window.addEventListener("DOMContentLoaded", function(){
             messageAry.push(emailError);
         }
         
-        //If there were errors, display them on the screen.
+    //If there were errors, display them on the screen.
         if(messageAry.length >= 1){
             for(var i=0, j=messageAry.length; i<j; i++){
                 var txt = document.createElement('li');
@@ -489,8 +489,8 @@ window.addEventListener("DOMContentLoaded", function(){
             return false;
             
         }else{
-            //If all is OK, save our data! Send the key value (that came from the edit function)
-            //Remember this key value was passed through the editSubmit eventListener...
+    //If all is OK, save our data! Send the key value (that came from the edit function)
+    //Remember this key value was passed through the editSubmit eventListener...
             storeData(this.key);
         }
       
@@ -508,8 +508,6 @@ window.addEventListener("DOMContentLoaded", function(){
         
         
     //Set Link & Submit Click Events
-    var displayResi = $("displayResi");
-    displayResi.addEventListener("click", getData);
     
     var displayLink = $("displayLink");
     displayLink.addEventListener("click", getData);
@@ -523,7 +521,7 @@ window.addEventListener("DOMContentLoaded", function(){
     
      // JSON Object which will auto populate local storage.
      
-/*    function autoFillData(){
+    function autoFillData(){
         var json = {
             "testClient1": {
                 "group":    ["Group:", "Residential"],
@@ -574,14 +572,14 @@ window.addEventListener("DOMContentLoaded", function(){
             },
         
         };
-        // Store the JSON Object into Local Storage
+    // Store the JSON Object into Local Storage
         for(var n in json){    
             var id                  = Math.floor(Math.random()*1000000001);
             localStorage.setItem(id, JSON.stringify(json[n]));
         }
 
     }
-*/    
+    
     function autoFillCom(){
         var json = {
             "testClient1": {
@@ -633,7 +631,7 @@ window.addEventListener("DOMContentLoaded", function(){
             },
         
         };
-        // Store the JSON Object into Local Storage
+    // Store the JSON Object into Local Storage
         for(var n in json){    
             var id                  = Math.floor(Math.random()*1000000001);
             localStorage.setItem(id, JSON.stringify(json[n]));
@@ -692,7 +690,7 @@ window.addEventListener("DOMContentLoaded", function(){
             },
         
         };
-        // Store the JSON Object into Local Storage
+    // Store the JSON Object into Local Storage
         for(var n in json){    
             var id                  = Math.floor(Math.random()*1000000001);
             localStorage.setItem(id, JSON.stringify(json[n]));
@@ -751,7 +749,7 @@ window.addEventListener("DOMContentLoaded", function(){
             },
         
         };
-        // Store the JSON Object into Local Storage
+    // Store the JSON Object into Local Storage
         for(var n in json){    
             var id                  = Math.floor(Math.random()*1000000001);
             localStorage.setItem(id, JSON.stringify(json[n]));
@@ -811,7 +809,7 @@ window.addEventListener("DOMContentLoaded", function(){
             },
         
         };
-        // Store the JSON Object into Local Storage
+    // Store the JSON Object into Local Storage
         for(var n in json){    
             var id                  = Math.floor(Math.random()*1000000001);
             localStorage.setItem(id, JSON.stringify(json[n]));
