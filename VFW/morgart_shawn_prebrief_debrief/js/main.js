@@ -113,28 +113,28 @@ window.addEventListener("DOMContentLoaded", function(){
             item.zip        = ["Zip:", $("zip").value];
             item.phone      = ["Phone:", $("phone").value];
             item.email      = ["Email:", $("email").value];
-            item.lineBreak  = [" ", lineBreak];
+//            item.lineBreak  = [" ", lineBreak];
             item.rep        = ["Representational Style:", repStyleValue];
-            item.lineBreak2 = [" ", lineBreak];
+//            item.lineBreak2 = [" ", lineBreak];
             item.direction  = ["Direction: toward vs. away:", $("direction").value];
             item.source     = ["Source: internal vs. external:", $("source").value];
             item.reason     = ["Reason: options vs. procedures:", $("reason").value];
             item.level      = ["Level: proactive vs. reactive:", $("level").value];
             item.scope      = ["Scope big-picture vs. details:", $("scope").value];
             item.change     = ["Change sameness vs. difference:", $("change").value];
-            item.lineBreak3 = [" ", lineBreak];
+//            item.lineBreak3 = [" ", lineBreak];
             item.chan       = ["Channel:", channelValue];
             item.conv       = ["Convincer:", convincerValue];
-            item.lineBreak4 = [" ", lineBreak];
+//            item.lineBreak4 = [" ", lineBreak];
             item.theor      = ["Theoretical:", $("theor").value];
             item.util       = ["Utilitarian:", $("util").value];
             item.aesth      = ["Aesthetic:", $("aesth").value];
             item.soci       = ["Social:", $("soci").value];
             item.indiv      = ["Individualistic:", $("indiv").value];
             item.trad       = ["Traditional:", $("trad").value];
-            item.lineBreak5 = [" ", lineBreak];
+//            item.lineBreak5 = [" ", lineBreak];
             item.social     = ["Social Style:", socialstyleValue];
-            item.lineBreak6 = [" ", lineBreak];
+//            item.lineBreak6 = [" ", lineBreak];
             item.dom        = ["Dominance:", $("dom").value];
             item.inf        = ["Influencing:", $("inf").value];
             item.stead      = ["Steadiness:", $("stead").value];
@@ -428,7 +428,7 @@ window.addEventListener("DOMContentLoaded", function(){
     //Get Error messages
         var messageAry = [ ];
     // Group validation
-        if(getGroup.value === "-- Choose --"){
+        if(getGroup.value === "-Choose Account Type-"){
             var groupError = "Please choose an Account Type!";
             getGroup.style.border = "1px solid red";
             messageAry.push(groupError);
@@ -500,7 +500,7 @@ window.addEventListener("DOMContentLoaded", function(){
     
     
     //Variable defaults
-    var taskGroup = ["-- Choose --", "Residential", "Commercial", "Medical", "Fire", "Takeover", "Upgrade", ];
+    var taskGroup = ["-Choose Account Type-", "Residential", "Commercial", "Medical", "Fire", "Takeover", "Upgrade", ];
      //   taskType;
     var lineBreak = "----------------------------------------";
     chooseGroup();
@@ -520,8 +520,8 @@ window.addEventListener("DOMContentLoaded", function(){
     
     
      // JSON Object which will auto populate local storage.
-     
-    function autoFillData(){
+/*     
+    function autoFillResi(){
         var json = {
             "testClient1": {
                 "group":    ["Group:", "Residential"],
@@ -816,6 +816,8 @@ window.addEventListener("DOMContentLoaded", function(){
         }
 
     }
+    
+*/
 
 });
        

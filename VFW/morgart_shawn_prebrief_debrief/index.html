@@ -26,8 +26,8 @@
             <img src="images/key_visual1.jpg" >        
         </div>
         
-        <div data-role="content">
-            <p><a href="#newclPage" data-role="button" data-theme="e">Add New Client Profile!</a></p>
+        <div data-role="content" id="newclbutton">
+            <p><a href="#newclPage" data-role="button" data-theme="e" background="url(images/blue-scratched-texture.jpg)">Add New Client Profile!</a></p>
         </div>
 
         <ul data-role="listview" data-inset="true" data-theme="b" data-count-theme="a">
@@ -37,8 +37,7 @@
             <li><a href="#firePage">Fire Monitoring</a></li>
             <li><a href="#mediPage">Medical Alert</a></li>
             <li><a href="#potePage">Potential Takeovers</a></li>
-            <li><a href='' onclick="getData">Display Data</a></li>
-            <li><a var displayLink = $("displayLink") displayLink.addEventListener("click", getData)</a></li>
+            <li><a href='#' id="displayLink"</a>Display Data</li>
         </ul>
 
         <div data-role="footer" >
@@ -55,158 +54,158 @@
 	    <H1>Add New Client</H1>
 	</div>
         
+        <div data-role="select" id="select">
+            <label for="group" class="ui-hidden-accessible">*Type of Account:</label>
+        </div>
+        
         <div data-role="collapsible-set">
 
-	<div data-role="collapsible" data-theme="b" data-collapsed="true">
-            <h3>General Data</h3>
-                <div data-role="fieldcontain">
-                    <label for="fname" class="ui-hidden-accessible">First Name:</label>
-                    <input data-theme="a" type="text" name="fname" id="fname" value="" placeholder="First Name:"/>
-                </div>
+            <div data-role="collapsible" data-theme="b" data-collapsed="true">
+                <h3>General Data</h3>
+                    <div data-role="fieldcontain">
+                        <label for="fname" class="ui-hidden-accessible">First Name:</label>
+                        <input data-theme="a" type="text" name="fname" id="fname" value="" placeholder="First Name:"/>
+                    </div>
+                        
+                    <div data-role="fieldcontain">
+                        <label for="lname" class="ui-hidden-accessible">Last Name:</label>
+                        <input data-theme="a" type="text" name="lname" id="lname" value="" placeholder="Last Name:"/>
+                    </div>
                     
-                <div data-role="fieldcontain">
-                    <label for="lname" class="ui-hidden-accessible">Last Name:</label>
-                    <input data-theme="a" type="text" name="lname" id="lname" value="" placeholder="Last Name:"/>
-                </div>
-                
-                <div data-role="fieldcontain">
-                    <label for="street" class="ui-hidden-accessible">Street Address:</label>
-                    <input data-theme="a" type="text" name="street" id="street" value="" placeholder="Street Address:"/>
-                </div>
-                
-                <div data-role="fieldcontain">
-                    <label for="city" class="ui-hidden-accessible">City:</label>
-                    <input data-theme="a" type="text" name="city" id="city" value="" placeholder="City:"/>
-                </div>
-                
-                <div data-role="fieldcontain">
-                    <label for="state" class="ui-hidden-accessible">State:</label>
-                    <input data-theme="a" type="text" name="state" id="state" value="" placeholder="State:"/>
-                </div>
-                
-                <div data-role="fieldcontain">
-                    <label for="zip" class="ui-hidden-accessible">Zip:</label>
-                    <input data-theme="a" type="number" name="zip" id="zip" value="" placeholder="Zip:"/>
-                </div>
-                
-                <div data-role="fieldcontain">
-                    <label for="phone" class="ui-hidden-accessible">Phone:</label>
-                    <input data-theme="a" type="tel" name="phone" id="phone" value="" placeholder="Phone:"/>
-                </div>
-                
-                <div data-role="fieldcontain">
-                    <label for="email" class="ui-hidden-accessible">Email:</label>
-                    <input data-theme="a" type="email" name="email" id="email" value="" placeholder="Email:"/>
-                </div>
-                
-            
-                
-                
-	</div>
-	
-	<div data-role="collapsible" data-theme="b" >
-            <h3>Neurolinguistics</h3>
-                <h4>Representational Style</h4>
-                <fieldset data-role="controlgroup">
-                    <legend>Ask a Thought-Provoking Question...</legend>
-                        <input type="radio" name="repStyle" id="auditory" value="auditory" checked="checked" />
-                            <label for="auditory">Auditory: looks side to side. Talk = Medium.</label>
-                        <input type="radio" name="repStyle" id="kines" value="kines"  />
-                            <label for="kines">Kinesthetic: looks down and right. Talk = Slow. "Feeling" words.</label>
-                        <input type="radio" name="repStyle" id="visual" value="visual"  />
-                            <label for="visual">Visual: looks defocused or up-left or up-right. Talk = Fast.</label>
-                </fieldset>
-                
-                <h4>Meta-Programs (Rank -10 to 10)</h4>
-                <label for="direction">Direction: toward vs. away:</label>
-                    <input type="range" data-theme="b" name="direction" id="direction" value="0" min="-10" max="10"  />
-                <label for="source">Source: internal vs. external:</label>
-                    <input type="range" data-theme="b" name="source" id="source" value="0" min="-10" max="10"  />
-                <label for="reason">Reason: options vs. procedures:</label>
-                    <input type="range" data-theme="b" name="reason" id="reason" value="0" min="-10" max="10"  />
-                <label for="level">Level: proactive vs. reactive:</label>
-                    <input type="range" data-theme="b" name="level" id="level" value="0" min="-10" max="10"  />
-                <label for="scope">Scope: big-picture vs. details:</label>
-                    <input type="range" data-theme="b" name="scope" id="scope" value="0" min="-10" max="10"  />
-                <label for="change">Change: sameness vs. difference:</label>
-                    <input type="range" data-theme="b" name="change" id="change" value="0" min="-10" max="10"  />
+                    <div data-role="fieldcontain">
+                        <label for="street" class="ui-hidden-accessible">Street Address:</label>
+                        <input data-theme="a" type="text" name="street" id="street" value="" placeholder="Street Address:"/>
+                    </div>
+                    
+                    <div data-role="fieldcontain">
+                        <label for="city" class="ui-hidden-accessible">City:</label>
+                        <input data-theme="a" type="text" name="city" id="city" value="" placeholder="City:"/>
+                    </div>
+                    
+                    <div data-role="fieldcontain">
+                        <label for="state" class="ui-hidden-accessible">State:</label>
+                        <input data-theme="a" type="text" name="state" id="state" value="" placeholder="State:"/>
+                    </div>
+                    
+                    <div data-role="fieldcontain">
+                        <label for="zip" class="ui-hidden-accessible">Zip:</label>
+                        <input data-theme="a" type="number" name="zip" id="zip" value="" placeholder="Zip:"/>
+                    </div>
+                    
+                    <div data-role="fieldcontain">
+                        <label for="phone" class="ui-hidden-accessible">Phone:</label>
+                        <input data-theme="a" type="tel" name="phone" id="phone" value="" placeholder="Phone:"/>
+                    </div>
+                    
+                    <div data-role="fieldcontain">
+                        <label for="email" class="ui-hidden-accessible">Email:</label>
+                        <input data-theme="a" type="email" name="email" id="email" value="" placeholder="Email:"/>
+                    </div>
+            </div>
 
-                <h4>Channels</h4>
-                <fieldset data-role="controlgroup">
-                    <legend>How one best learns.</legend>
-                        <input type="radio" name="channel" id="see" value="see" checked="checked" />
-                            <label for="see">See: Must see examples.</label>
-                        <input type="radio" name="channel" id="hear" value="hear"  />
-                            <label for="hear">Hear: Must hear how or hear about.</label>
-                        <input type="radio" name="channel" id="read" value="read"  />
-                            <label for="read">Read: Must read information themselves.</label>
-                        <input type="radio" name="channel" id="do" value="do"  />
-                            <label for="do">Do: Must do it or use it to be convinced.</label>
-                </fieldset>
-                
-                <h4>Convincers</h4>
-                <fieldset data-role="controlgroup">
-                    <legend>How one most easily convinces oneself.</legend>
-                        <input type="radio" name="channel" id="overtime" value="overtime" checked="checked" />
-                            <label for="overtime">Period of Time: data must remain Consistant.</label>
-                        <input type="radio" name="channel" id="repetition" value="repetition"  />
-                            <label for="repetition">Repetition: must have data a particular number of times.</label>
-                        <input type="radio" name="channel" id="automatic" value="automatic"  />
-                            <label for="automatic">Automatic: need partial information, assume the rest to decide.</label>
-                        <input type="radio" name="channel" id="consistent" value="consistent"  />
-                            <label for="consistent">Consistent: never really convinced, get info Every time.</label>
-                </fieldset>
-	</div>
+	
+            <div data-role="collapsible" data-theme="b" >
+                <h3>Neurolinguistics</h3>
+                    <h4>Representational Style</h4>
+                    <fieldset data-role="controlgroup">
+                        <legend>Ask a Thought-Provoking Question...</legend>
+                            <input type="radio" name="repStyle" id="auditory" value="auditory" checked="checked" />
+                                <label for="auditory">Auditory: looks side to side. Talk = Medium.</label>
+                            <input type="radio" name="repStyle" id="kines" value="kines"  />
+                                <label for="kines">Kinesthetic: looks down and right. Talk = Slow. "Feeling" words.</label>
+                            <input type="radio" name="repStyle" id="visual" value="visual"  />
+                                <label for="visual">Visual: looks defocused or up-left or up-right. Talk = Fast.</label>
+                    </fieldset>
+                    
+                    <h4>Meta-Programs (Rank -10 to 10)</h4>
+                    <label for="direction">Direction: toward vs. away:</label>
+                        <input type="range" data-theme="b" name="direction" id="direction" value="0" min="-10" max="10"  />
+                    <label for="source">Source: internal vs. external:</label>
+                        <input type="range" data-theme="b" name="source" id="source" value="0" min="-10" max="10"  />
+                    <label for="reason">Reason: options vs. procedures:</label>
+                        <input type="range" data-theme="b" name="reason" id="reason" value="0" min="-10" max="10"  />
+                    <label for="level">Level: proactive vs. reactive:</label>
+                        <input type="range" data-theme="b" name="level" id="level" value="0" min="-10" max="10"  />
+                    <label for="scope">Scope: big-picture vs. details:</label>
+                        <input type="range" data-theme="b" name="scope" id="scope" value="0" min="-10" max="10"  />
+                    <label for="change">Change: sameness vs. difference:</label>
+                        <input type="range" data-theme="b" name="change" id="change" value="0" min="-10" max="10"  />
+    
+                    <h4>Channels</h4>
+                    <fieldset data-role="controlgroup">
+                        <legend>How one best learns.</legend>
+                            <input type="radio" name="channel" id="see" value="see" checked="checked" />
+                                <label for="see">See: Must see examples.</label>
+                            <input type="radio" name="channel" id="hear" value="hear"  />
+                                <label for="hear">Hear: Must hear how or hear about.</label>
+                            <input type="radio" name="channel" id="read" value="read"  />
+                                <label for="read">Read: Must read information themselves.</label>
+                            <input type="radio" name="channel" id="do" value="do"  />
+                                <label for="do">Do: Must do it or use it to be convinced.</label>
+                    </fieldset>
+                    
+                    <h4>Convincers</h4>
+                    <fieldset data-role="controlgroup">
+                        <legend>How one most easily convinces oneself.</legend>
+                            <input type="radio" name="channel" id="overtime" value="overtime" checked="checked" />
+                                <label for="overtime">Period of Time: data must remain Consistant.</label>
+                            <input type="radio" name="channel" id="repetition" value="repetition"  />
+                                <label for="repetition">Repetition: must have data a particular number of times.</label>
+                            <input type="radio" name="channel" id="automatic" value="automatic"  />
+                                <label for="automatic">Automatic: need partial information, assume the rest to decide.</label>
+                            <input type="radio" name="channel" id="consistent" value="consistent"  />
+                                <label for="consistent">Consistent: never really convinced, get info Every time.</label>
+                    </fieldset>
+            </div>
         
-        <div data-role="collapsible" data-theme="b" >
-	<h3>Values</h3>
-	<h4>Values (Rank 0 to 100)</h4>
-                <label for="theor">Theoretical: knowledge, problem solver.</label>
-                    <input type="range" data-theme="b" name="theor" id="theor" value="0" min="0" max="100"  />
-                <label for="util">Utilitarian: practicality, money.</label>
-                    <input type="range" data-theme="b" name="util" id="util" value="0" min="0" max="100"  />
-                <label for="aesth">Aesthetic: creativity, enjoyment.</label>
-                    <input type="range" data-theme="b" name="aesth" id="aesth" value="0" min="0" max="100"  />
-                <label for="soci">Social: selflessness, generosity.</label>
-                    <input type="range" data-theme="b" name="soci" id="soci" value="0" min="0" max="100"  />
-                <label for="indiv">Individualistic: leading, achieving.</label>
-                    <input type="range" data-theme="b" name="indiv" id="indiv" value="0" min="0" max="100"  />
-                <label for="trad">Traditional: by the "book".</label>
-                    <input type="range" data-theme="b" name="trad" id="trad" value="0" min="0" max="100"  />
-                
-	</div>
+            <div data-role="collapsible" data-theme="b" >
+            <h3>Values</h3>
+            <h4>Values (Rank 0 to 100)</h4>
+                    <label for="theor">Theoretical: knowledge, problem solver.</label>
+                        <input type="range" data-theme="b" name="theor" id="theor" value="0" min="0" max="100"  />
+                    <label for="util">Utilitarian: practicality, money.</label>
+                        <input type="range" data-theme="b" name="util" id="util" value="0" min="0" max="100"  />
+                    <label for="aesth">Aesthetic: creativity, enjoyment.</label>
+                        <input type="range" data-theme="b" name="aesth" id="aesth" value="0" min="0" max="100"  />
+                    <label for="soci">Social: selflessness, generosity.</label>
+                        <input type="range" data-theme="b" name="soci" id="soci" value="0" min="0" max="100"  />
+                    <label for="indiv">Individualistic: leading, achieving.</label>
+                        <input type="range" data-theme="b" name="indiv" id="indiv" value="0" min="0" max="100"  />
+                    <label for="trad">Traditional: by the "book".</label>
+                        <input type="range" data-theme="b" name="trad" id="trad" value="0" min="0" max="100"  />
+                    
+            </div>
         
-        <div data-role="collapsible" data-theme="b" >
-	<h3>Behavioral Styles</h3>
-            <fieldset data-role="controlgroup">
-                    <legend>Social Style</legend>
-                        <input type="radio" name="channel" id="driver" value="driver" checked="checked" />
-                            <label for="driver">Driver: work-focused / extroverted.</label>
-                        <input type="radio" name="channel" id="expressive" value="expressive"  />
-                            <label for="expressive">Expressive: people-focused / extroverted.</label>
-                        <input type="radio" name="channel" id="amiable" value="amiable"  />
-                            <label for="amiable">Amiable: people-focused / introverted.</label>
-                        <input type="radio" name="channel" id="analytical" value="analytical"  />
-                            <label for="analytical">Analytical: work-focused / introverted.</label>
-                </fieldset>
-            
-            <h4>DISC Assessment (Rank -10 to 10)</h4>
-                <label for="dom">Dominance: calculating vs. agressive.</label>
-                    <input type="range" data-theme="b" name="dom" id="dom" value="0" min="-10" max="10"  />
-                <label for="inf">Influencing: reserved vs. outgoing.</label>
-                    <input type="range" data-theme="b" name="inf" id="inf" value="0" min="-10" max="10"  />
-                <label for="stead">Steadiness: unstructured vs. structured.</label>
-                    <input type="range" data-theme="b" name="stead" id="stead" value="0" min="-10" max="10"  />
-                <label for="comp">Compliance: makes own rules vs. follows The rules.</label>
-                    <input type="range" data-theme="b" name="comp" id="comp" value="0" min="-10" max="10"  />
-	</div>
+            <div data-role="collapsible" data-theme="b" >
+            <h3>Behavioral Styles</h3>
+                <fieldset data-role="controlgroup">
+                        <legend>Social Style</legend>
+                            <input type="radio" name="channel" id="driver" value="driver" checked="checked" />
+                                <label for="driver">Driver: work-focused / extroverted.</label>
+                            <input type="radio" name="channel" id="expressive" value="expressive"  />
+                                <label for="expressive">Expressive: people-focused / extroverted.</label>
+                            <input type="radio" name="channel" id="amiable" value="amiable"  />
+                                <label for="amiable">Amiable: people-focused / introverted.</label>
+                            <input type="radio" name="channel" id="analytical" value="analytical"  />
+                                <label for="analytical">Analytical: work-focused / introverted.</label>
+                    </fieldset>
+                
+                <h4>DISC Assessment (Rank -10 to 10)</h4>
+                    <label for="dom">Dominance: calculating vs. agressive.</label>
+                        <input type="range" data-theme="b" name="dom" id="dom" value="0" min="-10" max="10"  />
+                    <label for="inf">Influencing: reserved vs. outgoing.</label>
+                        <input type="range" data-theme="b" name="inf" id="inf" value="0" min="-10" max="10"  />
+                    <label for="stead">Steadiness: unstructured vs. structured.</label>
+                        <input type="range" data-theme="b" name="stead" id="stead" value="0" min="-10" max="10"  />
+                    <label for="comp">Compliance: makes own rules vs. follows The rules.</label>
+                        <input type="range" data-theme="b" name="comp" id="comp" value="0" min="-10" max="10"  />
+            </div>
+        </div>
         
         <div data-role="content">
             <p><a href="submit" data-role="button" data-theme="e" >Save Client Data</a></p>     
         </div> 
 	
-    
-    </div>
     
     </div>
         

@@ -1,14 +1,18 @@
 
-
+/*
 title: additem.html Styles
 author: Shawn R. Morgart
 for: Visual Frameworks 1110: Project 2
-
+*/
 
 
 div {
     background-image: url(images/blue-scratched-texture.jpg);  
 
+}
+
+#newclbutton {
+    background: url(images/blue-scratched-texture.jpg)
 }
 /*
 form {
