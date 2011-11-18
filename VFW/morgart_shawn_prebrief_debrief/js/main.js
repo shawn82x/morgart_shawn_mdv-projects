@@ -30,10 +30,10 @@ window.addEventListener("DOMContentLoaded", function(){
     
     //Find value of selected radio button.
     function getRadioRepstyle(){
-        var radios = document.forms[0].repStyle;
-        for (var i=0; i<radios.length; i++){
-            if(radios[i].checked){
-                repStyleValue = radios[i].value;
+        var radios1 = document.forms[0].repStyle;
+        for (var i=0; i<radios1.length; i++){
+            if(radios1[i].checked){
+                repStyleValue = radios1[i].value;
             }
         }
     }
@@ -145,6 +145,53 @@ window.addEventListener("DOMContentLoaded", function(){
         alert("Contact Saved!");
     }
     
+    
+    function getData(){
+        toggleControls("on");
+        if(localStorage.length === 0){
+            autoFillData;
+            alert("There is no data stored in this Category. Default data has been added.");
+            
+        }
+        
+    //Write Data from Local Storage to the browser.
+        var makeDiv = document.createElement('div');
+        makeDiv.setAttribute("id", "items");
+        var makeList = document.createElement('ul');
+        makeDiv.appendChild(makeList);
+        document.body.appendChild(makeDiv);
+        $('items').style.display = "block";
+        for(var i=0, len=localStorage.length; i<len; i++){
+            var makeli = document.createElement('li');
+            var linksLi = document.createElement("li");
+            makeList.appendChild(makeli);
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+    // Convert the string from local storage value back to an object by using JSON.parse().
+            var obj = JSON.parse(value);
+            var makeSubList = document.createElement('ul');
+            makeli.appendChild(makeSubList);
+            getImage(obj.group[1], makeSubList);
+            for(var n in obj){
+                var makeSubli = document.createElement('li');
+                makeSubList.appendChild(makeSubli);
+                var optSubText = obj[n][0]+" "+obj[n][1];
+                makeSubli.innerHTML = optSubText;
+                makeSubList.appendChild(linksLi);
+            }
+            makeItemLinks(localStorage.key(i), linksLi);     //Create edit and delete buttons/link for each item in local storage.
+        }
+    }
+    
+// Get the image for the correct category
+    function getImage(catName, makeSubList){
+        var imageLi = document.createElement('li');
+        makeSubList.appendChild(imageLi);
+        var newImg = document.createElement('img');
+        var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
+        imageLi.appendChild(newImg);
+    }
+    
     function autoFillData(){
         var json = {
             "testClient1": {
@@ -202,55 +249,7 @@ window.addEventListener("DOMContentLoaded", function(){
             localStorage.setItem(id, JSON.stringify(json[n]));
         }
 
-    }
-    
-    function getData(){
-        toggleControls("on");
-        if(localStorage.length === 0){
-            autoFillData;
-            alert("There is no data stored in this Category. Default data has been added.");
-            
-        }
-        
-    //Write Data from Local Storage to the browser.
-        var makeDiv = document.createElement('div');
-        makeDiv.setAttribute("id", "items");
-        var makeList = document.createElement('ul');
-        makeDiv.appendChild(makeList);
-        document.body.appendChild(makeDiv);
-        $('items').style.display = "block";
-        for(var i=0, len=localStorage.length; i<len; i++){
-            var makeli = document.createElement('li');
-            var linksLi = document.createElement("li");
-            makeList.appendChild(makeli);
-            var key = localStorage.key(i);
-            var value = localStorage.getItem(key);
-    // Convert the string from local storage value back to an object by using JSON.parse().
-            var obj = JSON.parse(value);
-            var makeSubList = document.createElement('ul');
-            makeli.appendChild(makeSubList);
-            getImage(obj.group[1], makeSubList);
-            for(var n in obj){
-                var makeSubli = document.createElement('li');
-                makeSubList.appendChild(makeSubli);
-                var optSubText = obj[n][0]+" "+obj[n][1];
-                makeSubli.innerHTML = optSubText;
-                makeSubList.appendChild(linksLi);
-            }
-            makeItemLinks(localStorage.key(i), linksLi);     //Create edit and delete buttons/link for each item in local storage.
-        }
-    }
-    
-// Get the image for the correct category
-    function getImage(catName, makeSubList){
-        var imageLi = document.createElement('li');
-        makeSubList.appendChild(imageLi);
-        var newImg = document.createElement('img');
-        var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
-        imageLi.appendChild(newImg);
-    }
-    
-    
+    }    
 //Make Item Links... create the edit and delet links for each stored item.
     function makeItemLinks(key, linksLi){
     //add edit single item link
@@ -511,7 +510,7 @@ window.addEventListener("DOMContentLoaded", function(){
     
     var displayLink = $("displayLink");
     displayLink.addEventListener("click", getData);
-    
+
     var clearLink = $("clearLink");
     clearLink.addEventListener("click", clearLocal);
       
@@ -519,305 +518,7 @@ window.addEventListener("DOMContentLoaded", function(){
     save.addEventListener("click", validate);
     
     
-     // JSON Object which will auto populate local storage.
-/*     
-    function autoFillResi(){
-        var json = {
-            "testClient1": {
-                "group":    ["Group:", "Residential"],
-                "fname":    ["First Name:", "John"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "1234 N. Main St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "AB"],
-                "zip":      ["Zip:", "98765"],
-                "phone":    ["Phone:", "123-456-7890"],
-                "email":    ["Email:", "john@doe.com"]
-            },
-            
-            "testClient2": {
-                "group":    ["Group:", "Residential"],
-                "fname":    ["First Name:", "Jane"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "9876 E. Sandusky St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "jane@gmail.com"]
-            },
-            
-            "testClient3": {
-                "group":    ["Group:", "Residential"],
-                "fname":    ["First Name:", "Jack"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "4562 E. North St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "jack@gmail.com"]
-            },
-            
-            "testClient4": {
-                "group":    ["Group:", "Residential"],
-                "fname":    ["First Name:", "Joe"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "9372 E. High St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "joe@doe.com"]
-            },
-        
-        };
-    // Store the JSON Object into Local Storage
-        for(var n in json){    
-            var id                  = Math.floor(Math.random()*1000000001);
-            localStorage.setItem(id, JSON.stringify(json[n]));
-        }
 
-    }
-    
-    function autoFillCom(){
-        var json = {
-            "testClient1": {
-                "group":    ["Group:", "Commercial"],
-                "fname":    ["First Name:", "John"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "1234 N. Main St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "AB"],
-                "zip":      ["Zip:", "98765"],
-                "phone":    ["Phone:", "123-456-7890"],
-                "email":    ["Email:", "john@doe.com"]
-            },
-            
-            "testClient2": {
-                "group":    ["Group:", "Commercial"],
-                "fname":    ["First Name:", "Jane"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "9876 E. Sandusky St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "jane@gmail.com"]
-            },
-            
-            "testClient3": {
-                "group":    ["Group:", "Commercial"],
-                "fname":    ["First Name:", "Jack"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "4562 E. North St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "jack@gmail.com"]
-            },
-            
-            "testClient4": {
-                "group":    ["Group:", "Commercial"],
-                "fname":    ["First Name:", "Joe"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "9372 E. High St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "joe@doe.com"]
-            },
-        
-        };
-    // Store the JSON Object into Local Storage
-        for(var n in json){    
-            var id                  = Math.floor(Math.random()*1000000001);
-            localStorage.setItem(id, JSON.stringify(json[n]));
-        }
-
-    }
-    
-    function autoFillMedi(){
-        var json = {
-            "testClient1": {
-                "group":    ["Group:", "Medical"],
-                "fname":    ["First Name:", "John"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "1234 N. Main St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "AB"],
-                "zip":      ["Zip:", "98765"],
-                "phone":    ["Phone:", "123-456-7890"],
-                "email":    ["Email:", "john@doe.com"]
-            },
-            
-            "testClient2": {
-                "group":    ["Group:", "Medical"],
-                "fname":    ["First Name:", "Jane"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "9876 E. Sandusky St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "jane@gmail.com"]
-            },
-            
-            "testClient3": {
-                "group":    ["Group:", "Medical"],
-                "fname":    ["First Name:", "Jack"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "4562 E. North St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "jack@gmail.com"]
-            },
-            
-            "testClient4": {
-                "group":    ["Group:", "Medical"],
-                "fname":    ["First Name:", "Joe"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "9372 E. High St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "joe@doe.com"]
-            },
-        
-        };
-    // Store the JSON Object into Local Storage
-        for(var n in json){    
-            var id                  = Math.floor(Math.random()*1000000001);
-            localStorage.setItem(id, JSON.stringify(json[n]));
-        }
-
-    }
-    
-    function autoFillFire(){
-        var json = {
-            "testClient1": {
-                "group":    ["Group:", "Fire"],
-                "fname":    ["First Name:", "John"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "1234 N. Main St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "AB"],
-                "zip":      ["Zip:", "98765"],
-                "phone":    ["Phone:", "123-456-7890"],
-                "email":    ["Email:", "john@doe.com"]
-            },
-            
-            "testClient2": {
-                "group":    ["Group:", "Fire"],
-                "fname":    ["First Name:", "Jane"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "9876 E. Sandusky St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "jane@gmail.com"]
-            },
-            
-            "testClient3": {
-                "group":    ["Group:", "Fire"],
-                "fname":    ["First Name:", "Jack"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "4562 E. North St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "jack@gmail.com"]
-            },
-            
-            "testClient4": {
-                "group":    ["Group:", "Fire"],
-                "fname":    ["First Name:", "Joe"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "9372 E. High St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "joe@doe.com"]
-            },
-        
-        };
-    // Store the JSON Object into Local Storage
-        for(var n in json){    
-            var id                  = Math.floor(Math.random()*1000000001);
-            localStorage.setItem(id, JSON.stringify(json[n]));
-        }
-
-    }
-    
-    
-    function autoFillUpgrade(){
-        var json = {
-            "testClient1": {
-                "group":    ["Group:", "Upgrade"],
-                "fname":    ["First Name:", "John"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "1234 N. Main St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "AB"],
-                "zip":      ["Zip:", "98765"],
-                "phone":    ["Phone:", "123-456-7890"],
-                "email":    ["Email:", "john@doe.com"]
-            },
-            
-            "testClient2": {
-                "group":    ["Group:", "Upgrade"],
-                "fname":    ["First Name:", "Jane"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "9876 E. Sandusky St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "jane@gmail.com"]
-            },
-            
-            "testClient3": {
-                "group":    ["Group:", "Upgrade"],
-                "fname":    ["First Name:", "Jack"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "4562 E. North St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "jack@gmail.com"]
-            },
-            
-            "testClient4": {
-                "group":    ["Group:", "Upgrade"],
-                "fname":    ["First Name:", "Joe"],
-                "lname":    ["Last Name:", "Doe"],
-                "street":   ["Street:", "9372 E. High St."],
-                "city":     ["City:", "Anytown"],
-                "state":    ["State", "CD"],
-                "zip":      ["Zip:", "45321"],
-                "phone":    ["Phone:", "987-654-3210"],
-                "email":    ["Email:", "joe@doe.com"]
-            },
-        
-        };
-    // Store the JSON Object into Local Storage
-        for(var n in json){    
-            var id                  = Math.floor(Math.random()*1000000001);
-            localStorage.setItem(id, JSON.stringify(json[n]));
-        }
-
-    }
-    
-*/
 
 });
        
